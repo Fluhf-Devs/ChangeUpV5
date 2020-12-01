@@ -12,35 +12,22 @@
 
 using namespace vex;
 
-vex::controller::button bUp = Controller1.ButtonUp;
-vex::controller::button bRight = Controller1.ButtonRight;
-vex::controller::button bDown = Controller1.ButtonDown;
-vex::controller::button bLeft = Controller1.ButtonLeft;
-
-void driveTrainControl(vex::directionType dir, int speed, vex::percentUnits pt, vex::controller::button Button) {
+void driveTrainControl(vex::directionType dir, int speed, vex::percentUnits pt) {
   Drivetrain.setDriveVelocity(speed, pt);
   Drivetrain.drive(dir);
-  waitUntil(!Button.pressing());
-  Drivetrain.stop();
 }
 
-void driveTrainControl(vex::turnType dir, int speed, vex::percentUnits pt, vex::controller::button Button) {
+void driveTrainControl(vex::turnType dir, int speed, vex::percentUnits pt) {
   Drivetrain.setTurnVelocity(speed, pt);
   Drivetrain.turn(dir);
-  waitUntil(!Button.pressing());
-  Drivetrain.stop();
 }
 
-void driveTrainControl(vex::directionType dir, int speed, vex::velocityUnits vel, vex::controller::button Button) {
+void driveTrainControl(vex::directionType dir, int speed, vex::velocityUnits vel) {
   Drivetrain.setDriveVelocity(speed, vel);
   Drivetrain.drive(dir);
-  waitUntil(!Button.pressing());
-  Drivetrain.stop();
 }
 
-void driveTrainControl(vex::turnType dir, int speed, vex::velocityUnits vel, vex::controller::button Button) {
+void driveTrainControl(vex::turnType dir, int speed, vex::velocityUnits vel) {
   Drivetrain.setTurnVelocity(speed, vel);
   Drivetrain.turn(dir);
-  waitUntil(!Button.pressing());
-  Drivetrain.stop();
 }

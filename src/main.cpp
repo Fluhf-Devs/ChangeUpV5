@@ -27,35 +27,51 @@
 using namespace vex;
 
 void whenControllerR1Pressed() {
-  intakeMove(600, rpm, inwards, bR1);
+  intakeMove(600, rpm, forward);
+  waitUntil(!Controller1.ButtonR1.pressing());
+  intakeStop();
 }
 
 void whenControllerR2Pressed() {
-  intakeMove(400, rpm, outwards, bR2);
+  intakeMove(400, rpm, reverse);
+  waitUntil(!Controller1.ButtonR2.pressing());
+  intakeStop();
 }
 
 void whenControllerL1Pressed() {
-  outakeMove(600, rpm, upwards, bL1);
+  outakeMove(600, rpm, reverse);
+  waitUntil(!Controller1.ButtonL1.pressing());
+  outakeStop();
 }
 
 void whenControllerL2Pressed() {
-  outakeMove(400, rpm, downwards, bL2);
+  outakeMove(400, rpm, forward);
+  waitUntil(!Controller1.ButtonL2.pressing());
+  outakeStop();
 }
 
 void whenControllerButtonUpPressed() {
-  driveTrainControl(forward, 15, percent, bUp);
+  driveTrainControl(forward, 15, percent);
+  waitUntil(!Controller1.ButtonUp.pressing());
+  Drivetrain.stop();
 }
 
 void whenControllerButtonRightPressed() {
-  driveTrainControl(right, 15, percent, bRight);
+  driveTrainControl(right, 15, percent);
+  waitUntil(!Controller1.ButtonRight.pressing());
+  Drivetrain.stop();
 }
 
 void whenControllerButtonDownPressed() {
-  driveTrainControl(reverse, 15, percent, bDown);
+  driveTrainControl(reverse, 15, percent);
+  waitUntil(!Controller1.ButtonDown.pressing());
+  Drivetrain.stop();
 }
 
 void whenControllerButtonLeftPressed() {
-  driveTrainControl(left, 15, percent, bLeft);
+  driveTrainControl(left, 15, percent);
+  waitUntil(!Controller1.ButtonLeft.pressing());
+  Drivetrain.stop();
 }
 
 int main() {

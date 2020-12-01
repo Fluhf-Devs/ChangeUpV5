@@ -12,27 +12,23 @@
 
 using namespace vex;
 
-vex::directionType upwards = vex::directionType(reverse);
-vex::directionType downwards = vex::directionType(forward);
-vex::controller::button bL1 = Controller1.ButtonL1;
-vex::controller::button bL2 = Controller1.ButtonL2;
-
-void outakeMove(int speed, vex::percentUnits pt, vex::directionType Mdir, vex::controller::button Button) {
+void outakeMove(int speed, vex::percentUnits pt, vex::directionType Mdir) {
   leftUpwards.setVelocity(speed,pt);
   rightUpwards.setVelocity(speed,pt);
   leftUpwards.spin(Mdir);
   rightUpwards.spin(Mdir);
-  waitUntil(!Button.pressing());
-  leftArmMotor.stop();
-  rightArmMotor.stop();
+
 }
 
-void outakeMove(int speed, vex::velocityUnits vel, vex::directionType Mdir, vex::controller::button Button) {
+void outakeMove(int speed, vex::velocityUnits vel, vex::directionType Mdir) {
   leftUpwards.setVelocity(speed,vel);
   rightUpwards.setVelocity(speed,vel);
   leftUpwards.spin(Mdir);
   rightUpwards.spin(Mdir);
-  waitUntil(!Button.pressing());
+
+}
+
+void outakeStop() {
   leftUpwards.stop();
   rightUpwards.stop();
 }
