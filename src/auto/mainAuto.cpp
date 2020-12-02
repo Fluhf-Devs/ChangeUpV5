@@ -10,8 +10,6 @@
 #include "vex.h"
 #include "movementEvents.h"
 
-using namespace vex;
-
 void autoMain() {
 
 }
