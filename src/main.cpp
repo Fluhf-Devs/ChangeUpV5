@@ -17,6 +17,7 @@
 // rightArmMotor        motor         6               
 // leftUpwards          motor         17              
 // rightUpwards         motor         8               
+// LineTracker2         line          B               
 // ---- END VEXCODE CONFIGURED DEVICES ----
 
 #include "vex.h"
