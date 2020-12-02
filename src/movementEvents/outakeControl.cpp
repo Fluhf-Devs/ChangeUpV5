@@ -10,8 +10,6 @@
 #include "vex.h"
 #include "movementEvents.h"
 
-using namespace vex;
-
 void outakeMove(int speed, vex::percentUnits pt, vex::directionType Mdir) {
   leftUpwards.setVelocity(speed,pt);
   rightUpwards.setVelocity(speed,pt);

@@ -23,8 +23,6 @@
 #include "vex.h"
 #include "movementEvents.h"
 
-using namespace vex;
-
 void whenControllerR1Pressed() {
   intakeMove(600, rpm, forward);
   waitUntil(!Controller1.ButtonR1.pressing());
