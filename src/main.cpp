@@ -19,10 +19,7 @@
 // ---- END VEXCODE CONFIGURED DEVICES ----
 
 #include "vex.h"
-#include "driver-control-functions.h"
-#include "./movementEvents/intakeEvents/intakeControl.cpp"
-#include "./movementEvents/outakeEvents/outakeControl.cpp"
-#include "./movementEvents/driveTrainEvents/driveTrainControl.cpp"
+#include "movementEvents.h"
 
 using namespace vex;
 

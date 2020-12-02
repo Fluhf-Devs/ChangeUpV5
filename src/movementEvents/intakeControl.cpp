@@ -8,7 +8,7 @@
 /*----------------------------------------------------------------------------*/
 
 #include "vex.h"
-#include "driver-control-functions.h"
+#include "movementEvents.h"
 #include "vex_controller.h"
 
 using namespace vex;
