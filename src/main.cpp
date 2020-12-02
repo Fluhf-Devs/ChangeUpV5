@@ -71,6 +71,10 @@ void whenControllerButtonLeftPressed() {
   Drivetrain.stop();
 }
 
+void autonomous() {
+  autoMain();
+}
+
 int main() {
   // Initializing Robot Configuration. DO NOT REMOVE!
   vexcodeInit();

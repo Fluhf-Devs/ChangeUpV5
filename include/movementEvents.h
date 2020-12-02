@@ -8,3 +8,4 @@ void driveTrainControl(vex::directionType dir, int speed, vex::percentUnits pt);
 void driveTrainControl(vex::turnType dir, int speed, vex::percentUnits pt);
 void driveTrainControl(vex::directionType dir, int speed, vex::velocityUnits vel);
 void driveTrainControl(vex::turnType dir, int speed, vex::velocityUnits vel);
+void autoMain();
