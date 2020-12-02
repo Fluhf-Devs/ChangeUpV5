@@ -9,7 +9,8 @@
 
 #include "vex.h"
 #include "movementEvents.h"
-#include "vex_controller.h"
+
+/* Shorten the functions in main.cpp and in autoMain.cpp for controlling the intakes*/
 
 void intakeMove(int speed, vex::percentUnits pt, vex::directionType Mdir) {
   leftArmMotor.setVelocity(speed, pt);

@@ -10,6 +10,8 @@
 #include "vex.h"
 #include "movementEvents.h"
 
+/* Shorten the functions in main.cpp and in autoMain.cpp for controlling the outakes*/
+
 void outakeMove(int speed, vex::percentUnits pt, vex::directionType Mdir) {
   leftUpwards.setVelocity(speed,pt);
   rightUpwards.setVelocity(speed,pt);

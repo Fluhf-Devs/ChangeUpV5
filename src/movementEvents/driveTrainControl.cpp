@@ -10,6 +10,8 @@
 #include "vex.h"
 #include "movementEvents.h"
 
+/* Shorten the functions in main.cpp and in autoMain.cpp for controlling the drivetrain*/
+
 void driveTrainControl(vex::directionType dir, int speed, vex::percentUnits pt) {
   Drivetrain.setDriveVelocity(speed, pt);
   Drivetrain.drive(dir);
