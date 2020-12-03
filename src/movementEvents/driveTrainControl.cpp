@@ -34,20 +34,3 @@ void driveTrainControl(vex::turnType dir, int speed, vex::velocityUnits vel) {
   Drivetrain.setTurnVelocity(speed, vel);
   Drivetrain.turn(dir);
 }
-
-// These functions could perhaps be used for autonomous
-void driveTrainControl(vex::directionType dir, double dis, vex::distanceUnits units) {
-  Drivetrain.driveFor(dir, dis, units);
-}
-
-void driveTrainControl(vex::directionType dir, double dis, vex::distanceUnits units, double speed, vex::velocityUnits vel) {
-  Drivetrain.driveFor(dir, dis, units, speed, vel);
-}
-
-void driveTrainControl(double dis, vex::distanceUnits units) {
-  Drivetrain.driveFor(dis, units);
-}
-
-void driveTrainControl(double dis, vex::distanceUnits units, double speed, vex::velocityUnits vel) {
-  Drivetrain.driveFor(dis, units, speed, vel);
-}

@@ -8,8 +8,4 @@ void driveTrainControl(vex::directionType dir, int speed, vex::percentUnits pt);
 void driveTrainControl(vex::turnType dir, int speed, vex::percentUnits pt);
 void driveTrainControl(vex::directionType dir, int speed, vex::velocityUnits vel);
 void driveTrainControl(vex::turnType dir, int speed, vex::velocityUnits vel);
-void driveTrainControl(vex::directionType dir, double dis, vex::distanceUnits units);
-void driveTrainControl(vex::directionType dir, double dis, vex::distanceUnits units, double speed, vex::velocityUnits vel);
-void driveTrainControl(double dis, vex::distanceUnits units);
-void driveTrainControl(double dis, vex::distanceUnits units, double speed, vex::velocityUnits vel);
 void autoMain();

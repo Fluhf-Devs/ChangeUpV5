@@ -23,79 +23,49 @@
 #include "vex.h"
 #include "movementEvents.h"
 
-void whenControllerR1Pressed() {
-  intakeMove(600, rpm, forward);
-  waitUntil(!Controller1.ButtonR1.pressing());
-  wait(5, msec);
-  intakeStop();
-}
+using namespace vex;
 
-void whenControllerR2Pressed() {
-  intakeMove(400, rpm, reverse);
-  waitUntil(!Controller1.ButtonR2.pressing());
-  wait(5, msec);
-  intakeStop();
-}
+// A global instance of competition
+competition Competition;
 
-void whenControllerL1Pressed() {
-  outakeMove(600, rpm, reverse);
-  waitUntil(!Controller1.ButtonL1.pressing());
-  wait(5, msec);
-  outakeStop();
-}
-
-void whenControllerL2Pressed() {
-  outakeMove(400, rpm, forward);
-  waitUntil(!Controller1.ButtonL2.pressing());
-  wait(5, msec);
-  outakeStop();
-}
-
-void whenControllerButtonUpPressed() {
-  driveTrainControl(forward, 15, percent);
-  waitUntil(!Controller1.ButtonUp.pressing());
-  wait(5, msec);
-  Drivetrain.stop();
-}
-
-void whenControllerButtonRightPressed() {
-  driveTrainControl(right, 15, percent);
-  waitUntil(!Controller1.ButtonRight.pressing());
-  wait(5, msec);
-  Drivetrain.stop();
-}
-
-void whenControllerButtonDownPressed() {
-  driveTrainControl(reverse, 15, percent);
-  waitUntil(!Controller1.ButtonDown.pressing());
-  wait(5, msec);
-  Drivetrain.stop();
-}
-
-void whenControllerButtonLeftPressed() {
-  driveTrainControl(left, 15, percent);
-  waitUntil(!Controller1.ButtonLeft.pressing());
-  wait(5, msec);
-  Drivetrain.stop();
-}
-
-void autonomous() {
+void autonomous(void) {
   autoMain();
+}
+
+void usercontrol(void) {
+  if (Controller1.ButtonR1.pressing()) {
+    intakeMove(600, rpm, forward);
+  }
+  if (Controller1.ButtonR2.pressing()) {
+    intakeMove(400, rpm, reverse);
+  }
+  if (Controller1.ButtonL1.pressing()) {
+    outakeMove(600, rpm, reverse);
+  }
+  if (Controller1.ButtonL2.pressing()) {
+    outakeMove(400, rpm, forward);
+  }
+  if (Controller1.ButtonUp.pressing()) {
+    driveTrainControl(forward, 15, percent);
+  }
+  if (Controller1.ButtonRight.pressing()) {
+    driveTrainControl(right, 15, percent);
+  }
+  if (Controller1.ButtonDown.pressing()) {
+    driveTrainControl(reverse, 15, percent);
+  }
+  if (Controller1.ButtonLeft.pressing()) {
+    driveTrainControl(left, 15, percent);
+  }
 }
 
 int main() {
   // Initializing Robot Configuration. DO NOT REMOVE!
   vexcodeInit();
-
-  //Create Callbacks for the motors and buttons
-  Controller1.ButtonR1.pressed(whenControllerR1Pressed);
-  Controller1.ButtonR2.pressed(whenControllerR2Pressed);
-  Controller1.ButtonL1.pressed(whenControllerL1Pressed);
-  Controller1.ButtonL2.pressed(whenControllerL2Pressed);
-  Controller1.ButtonUp.pressed(whenControllerButtonUpPressed);
-  Controller1.ButtonRight.pressed(whenControllerButtonRightPressed);
-  Controller1.ButtonDown.pressed(whenControllerButtonDownPressed);
-  Controller1.ButtonLeft.pressed(whenControllerButtonLeftPressed);
+  
+  // Create callbacks for autonomous and driver control periods.
+  Competition.autonomous(autonomous);
+  Competition.drivercontrol(usercontrol);
 
   // Set the intake and outake motors stopping mode
   leftUpwards.setStopping(brake);
