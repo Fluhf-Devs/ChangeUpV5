@@ -10,7 +10,7 @@
 #include "vex.h"
 #include "movementEvents.h"
 
-/* main autonomous code*/
+/* main autonomous code */
 
 void autoMain() {
 

@@ -13,10 +13,13 @@
 /* Shorten the functions in main.cpp and in autoMain.cpp for controlling the drivetrain*/
 
 void driveTrainControl(vex::directionType dir, int speed, vex::percentUnits pt) {
+  // set the velocity
   Drivetrain.setDriveVelocity(speed, pt);
+  // drive
   Drivetrain.drive(dir);
 }
 
+// overload the functions for different combinations of parameters
 void driveTrainControl(vex::turnType dir, int speed, vex::percentUnits pt) {
   Drivetrain.setTurnVelocity(speed, pt);
   Drivetrain.turn(dir);
@@ -32,6 +35,7 @@ void driveTrainControl(vex::turnType dir, int speed, vex::velocityUnits vel) {
   Drivetrain.turn(dir);
 }
 
+// These functions could perhaps be used for autonomous
 void driveTrainControl(vex::directionType dir, double dis, vex::distanceUnits units) {
   Drivetrain.driveFor(dir, dis, units);
 }
