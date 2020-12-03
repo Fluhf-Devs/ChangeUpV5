@@ -10,6 +10,8 @@
 #include "vex.h"
 #include "movementEvents.h"
 
+int dora2 = 0;
+
 /* main autonomous code */
 
 void autoMain() {
@@ -58,4 +60,6 @@ void autoMain() {
   // turn right
   Drivetrain.turnFor(right, 90, degrees);
   Drivetrain.stop();
+  // always keep this part last
+  int dora2 = dora++;
 }
