@@ -12,11 +12,11 @@
 // [Name]               [Type]        [Port(s)]
 // Controller1          controller                    
 // Drivetrain           drivetrain    1, 2, 3, 4      
-// LineTracker1         line          A               
 // leftArmMotor         motor         5               
 // rightArmMotor        motor         6               
 // leftUpwards          motor         17              
 // rightUpwards         motor         8               
+// LineTracker1         line          A               
 // LineTracker2         line          B               
 // ---- END VEXCODE CONFIGURED DEVICES ----
 

@@ -15,12 +15,12 @@ motor_group LeftDriveSmart = motor_group(leftMotorA, leftMotorB);
 motor rightMotorA = motor(PORT3, ratio18_1, true);
 motor rightMotorB = motor(PORT4, ratio18_1, true);
 motor_group RightDriveSmart = motor_group(rightMotorA, rightMotorB);
-drivetrain Drivetrain = drivetrain(LeftDriveSmart, RightDriveSmart, 319.19, 295, 40, mm, 1);
-line LineTracker1 = line(Brain.ThreeWirePort.A);
+drivetrain Drivetrain = drivetrain(LeftDriveSmart, RightDriveSmart, 299.24, 370, 185, mm, 1);
 motor leftArmMotor = motor(PORT5, ratio6_1, false);
 motor rightArmMotor = motor(PORT6, ratio6_1, true);
 motor leftUpwards = motor(PORT17, ratio6_1, false);
 motor rightUpwards = motor(PORT8, ratio6_1, true);
+line LineTracker1 = line(Brain.ThreeWirePort.A);
 line LineTracker2 = line(Brain.ThreeWirePort.B);
 
 // VEXcode generated functions
