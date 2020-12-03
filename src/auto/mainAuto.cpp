@@ -61,5 +61,5 @@ void autoMain() {
   Drivetrain.turnFor(right, 90, degrees);
   Drivetrain.stop();
   // always keep this part last
-  int dora2 = dora++;
+  int dora2 = dora+1;
 }
