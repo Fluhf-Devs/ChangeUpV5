@@ -28,9 +28,10 @@ using namespace vex;
 competition Competition;
 
 int dora = 0;
+int dora3 = dora2;
 
 void whenControllerR1Pressed() {
-  if (int dora2 = 1) {
+  if (int dora3 = 1) {
     intakeMove(600, rpm, forward);
     waitUntil(!Controller1.ButtonR1.pressing());
     wait(5, msec);
@@ -39,7 +40,7 @@ void whenControllerR1Pressed() {
 }
 
 void whenControllerR2Pressed() {
-  if (int dora2 = 1) {
+  if (int dora3 = 1) {
     waitUntil(!Controller1.ButtonR2.pressing());
     wait(5, msec);
   intakeStop();
@@ -48,7 +49,7 @@ void whenControllerR2Pressed() {
 
 
 void whenControllerL1Pressed() {
-  if (int dora2 = 1) {
+  if (int dora3 = 1) {
     outakeMove(600, rpm, reverse);
     waitUntil(!Controller1.ButtonL1.pressing());
     wait(5, msec);
@@ -57,7 +58,7 @@ void whenControllerL1Pressed() {
 }
 
 void whenControllerL2Pressed() {
-  if (int dora2 = 1) {
+  if (int dora3 = 1) {
     outakeMove(400, rpm, forward);
     waitUntil(!Controller1.ButtonL2.pressing());
     wait(5, msec);
@@ -66,7 +67,7 @@ void whenControllerL2Pressed() {
 }
 
 void whenControllerButtonUpPressed() {
-  if (int dora2 = 1) {
+  if (int dora3 = 1) {
     driveTrainControl(forward, 15, percent);
     waitUntil(!Controller1.ButtonUp.pressing());
     wait(5, msec);
@@ -75,7 +76,7 @@ void whenControllerButtonUpPressed() {
 }
 
 void whenControllerButtonRightPressed() {
-  if (int dora2 = 1) {
+  if (int dora3 = 1) {
     driveTrainControl(right, 15, percent);
     waitUntil(!Controller1.ButtonRight.pressing());
     wait(5, msec);
@@ -84,7 +85,7 @@ void whenControllerButtonRightPressed() {
 }
 
 void whenControllerButtonDownPressed() {
-  if (int dora2 = 1) {
+  if (int dora3 = 1) {
     driveTrainControl(reverse, 15, percent);
     waitUntil(!Controller1.ButtonDown.pressing());
     wait(5, msec);
@@ -93,7 +94,7 @@ void whenControllerButtonDownPressed() {
 }
 
 void whenControllerButtonLeftPressed() {
-    if (int dora2 = 1) {
+    if (int dora3 = 1) {
     driveTrainControl(left, 15, percent);
     waitUntil(!Controller1.ButtonLeft.pressing());
     wait(5, msec);
@@ -109,7 +110,6 @@ void autonomous( void ) {
 }
 
 void usercontrol( void ) {
-
 }
 
 int main() {
