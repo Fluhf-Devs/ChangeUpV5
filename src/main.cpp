@@ -25,6 +25,9 @@
 
 competition Competition;
 
+int test = 0;
+int skillsAuto = 0;
+
 void whenControllerR1Pressed() {
   intakeMove(600, rpm, forward);
   waitUntil(!Controller1.ButtonR1.pressing());
@@ -81,8 +84,16 @@ void whenControllerButtonLeftPressed() {
   Drivetrain.stop();
 }
 
+void whenControllerButtonBPressed() {
+  skillsMainAuto();
+}
+
+void whenControllerButonXPressed() {
+  ++test;
+}
+
 void autonomous() {
-  autoMain();
+  competitionMainAuto();
 }
 
 void usercontrol() {
@@ -101,6 +112,10 @@ int main() {
   // Initializing Robot Configuration. DO NOT REMOVE!
   vexcodeInit();
 
+  // set the callbacks for testing mode
+  Controller1.ButtonB.pressed(whenControllerButtonBPressed);
+  Controller1.ButtonX.pressed(whenControllerButonXPressed);
+
   // set the callbacks for drivercontrol and usercontrol periods
   Competition.autonomous(autonomous);
   Competition.drivercontrol(usercontrol);
@@ -111,5 +126,17 @@ int main() {
   leftArmMotor.setStopping(coast);
   rightArmMotor.setStopping(coast);
   Drivetrain.setStopping(coast);
+
+  // enter test mode
+  if (test>=1) {
+    Controller1.ButtonR1.pressed(whenControllerR1Pressed);
+    Controller1.ButtonR2.pressed(whenControllerR2Pressed);
+    Controller1.ButtonL1.pressed(whenControllerL1Pressed);
+    Controller1.ButtonL2.pressed(whenControllerL2Pressed);
+    Controller1.ButtonUp.pressed(whenControllerButtonUpPressed);
+    Controller1.ButtonRight.pressed(whenControllerButtonRightPressed);
+    Controller1.ButtonDown.pressed(whenControllerButtonDownPressed);
+    Controller1.ButtonLeft.pressed(whenControllerButtonLeftPressed);
+  }  
   
 }

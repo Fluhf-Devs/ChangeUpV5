@@ -12,4 +12,5 @@ void driveTrainControl(vex::directionType dir, double dis, vex::distanceUnits un
 void driveTrainControl(vex::directionType dir, double dis, vex::distanceUnits units, double speed, vex::velocityUnits vel);
 void driveTrainControl(double dis, vex::distanceUnits units);
 void driveTrainControl(double dis, vex::distanceUnits units, double speed, vex::velocityUnits vel);
-void autoMain();
+void skillsMainAuto();
+void competitionMainAuto();

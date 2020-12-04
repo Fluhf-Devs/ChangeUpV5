@@ -1,6 +1,6 @@
 /*----------------------------------------------------------------------------*/
 /*                                                                            */
-/*    Module:       mainAuto.cpp                                              */
+/*    Module:       skillsAuto.cpp                                             */
 /*    Author:       Liam Teale                                                */
 /*    Created:      Thu Nov 26 2020                                           */
 /*    Description:  V5 ChangeUp Robot                                         */
@@ -10,9 +10,9 @@
 #include "vex.h"
 #include "movementEvents.h"
 
-/* main autonomous code */
+/* skills autonomous code */
 
-void autoMain() {
+void skillsMainAuto() {
   // spin the outakes
   outakeMove(600, rpm, reverse);
   wait(1000, msec);
@@ -35,12 +35,13 @@ void autoMain() {
   Drivetrain.stop();
   wait(1000, msec);
   // turn 180 degrees
-  Drivetrain.turnFor(left, 240, degrees);
+  Drivetrain.turnFor(left, 270, degrees);
   wait(1000, msec);
   // get the ball out
   intakeMove(600, rpm, reverse);
   wait(1000, msec);
   intakeStop();
+  Drivetrain.turnFor(right, 30, degrees);
   // move close to center goal
   Drivetrain.driveFor(forward, 900, mm, 200, rpm);
   wait(1000, msec);
