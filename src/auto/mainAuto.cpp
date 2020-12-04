@@ -10,56 +10,54 @@
 #include "vex.h"
 #include "movementEvents.h"
 
-int dora2 = 0;
-
 /* main autonomous code */
 
 void autoMain() {
-  // descore ball at starting point
-  intakeMove(600, rpm, forward);
-  wait(500, msec);
-  intakeStop();
+  // spin the outakes
+  outakeMove(600, rpm, reverse);
   wait(1000, msec);
-  // go backwards
-  driveTrainControl(reverse, 30, percent);
+  outakeStop();
+  // spin the intakes
+  intakeMove(600, rpm, forward);
+  // move forward
+  Drivetrain.drive(forward, 200, rpm);
+  wait(500, msec);
+  Drivetrain.stop();
+  // descore ball at starting point
+  wait(500, msec);
+  Drivetrain.drive(reverse, 75, rpm);
   wait(500, msec);
   Drivetrain.stop();
   wait(1000, msec);
+  // go backwards
+  driveTrainControl(reverse, 50, percent);
+  wait(1000, msec);
+  Drivetrain.stop();
+  wait(1000, msec);
   // turn 180 degrees
-  Drivetrain.turnFor(left, 180, degrees);
+  Drivetrain.turnFor(left, 240, degrees);
   wait(1000, msec);
   // get the ball out
   intakeMove(600, rpm, reverse);
   wait(1000, msec);
+  intakeStop();
   // move close to center goal
-  Drivetrain.driveFor(forward, 455, mm);
+  Drivetrain.driveFor(forward, 900, mm, 200, rpm);
   wait(1000, msec);
-  // turn 90 degrees to the right 
-  Drivetrain.turnFor(right, 90, degrees);
-  wait(1000, msec);
-  // go forward a bit so it can descore the middle balls
-  Drivetrain.driveFor(forward, 50, mm);
-  wait(1000, msec);
-  // turn so it faces the center goal
-  Drivetrain.turnFor(left, 90, degrees);
-  wait(1000, msec);
-  // ram to descore a ball at the center goal
-  Drivetrain.drive(forward, 200, rpm);
-  wait(500, msec);
+  // reverse
+  Drivetrain.drive(reverse);
+  wait(700, msec);
   Drivetrain.stop();
-  wait(1000, msec);
-  // score the middle with the preload
-  outakeMove(600, rpm, reverse);
-  wait(2000, msec);
-  outakeStop();
-  wait(1000, msec);
-  // back out of the goal
-  Drivetrain.driveFor(reverse, 300, mm);
+  // forward
+  Drivetrain.drive(forward, 600, rpm);
+  wait(900, msec);
   Drivetrain.stop();
-  wait(1000, msec);
-  // turn right
-  Drivetrain.turnFor(right, 90, degrees);
+  // reverse
+  Drivetrain.drive(reverse);
+  wait(900, msec);
   Drivetrain.stop();
-  // always keep this part last
-  int dora2 = dora+1;
+  // forward
+  Drivetrain.drive(forward, 600, rpm);
+  wait(900, msec);
+  Drivetrain.stop();
 }

@@ -15,12 +15,12 @@ motor_group LeftDriveSmart = motor_group(leftMotorA, leftMotorB);
 motor rightMotorA = motor(PORT3, ratio18_1, true);
 motor rightMotorB = motor(PORT4, ratio18_1, true);
 motor_group RightDriveSmart = motor_group(rightMotorA, rightMotorB);
-drivetrain Drivetrain = drivetrain(LeftDriveSmart, RightDriveSmart, 299.24, 370, 185, mm, 1);
+drivetrain Drivetrain = drivetrain(LeftDriveSmart, RightDriveSmart, 319.19, 295, 40, mm, 1);
+line LineTracker1 = line(Brain.ThreeWirePort.A);
 motor leftArmMotor = motor(PORT5, ratio6_1, false);
 motor rightArmMotor = motor(PORT6, ratio6_1, true);
 motor leftUpwards = motor(PORT17, ratio6_1, false);
 motor rightUpwards = motor(PORT8, ratio6_1, true);
-line LineTracker1 = line(Brain.ThreeWirePort.A);
 line LineTracker2 = line(Brain.ThreeWirePort.B);
 
 // VEXcode generated functions
@@ -37,10 +37,10 @@ int rc_auto_loop_function_Controller1() {
   while(true) {
     if(RemoteControlCodeEnabled) {
       // calculate the drivetrain motor velocities from the controller joystick axies
-      // left = Axis3
-      // right = Axis2
-      int drivetrainLeftSideSpeed = Controller1.Axis3.position();
-      int drivetrainRightSideSpeed = Controller1.Axis2.position();
+      // left = Axis3 + Axis1
+      // right = Axis3 - Axis1
+      int drivetrainLeftSideSpeed = Controller1.Axis3.position() + Controller1.Axis1.position();
+      int drivetrainRightSideSpeed = Controller1.Axis3.position() - Controller1.Axis1.position();
       
       // check if the value is inside of the deadband range
       if (drivetrainLeftSideSpeed < 5 && drivetrainLeftSideSpeed > -5) {
