@@ -128,7 +128,7 @@ int main() {
   Drivetrain.setStopping(coast);
 
   // enter test mode
-  if (test>=1) {
+  while (test>=1) {
     Controller1.ButtonR1.pressed(whenControllerR1Pressed);
     Controller1.ButtonR2.pressed(whenControllerR2Pressed);
     Controller1.ButtonL1.pressed(whenControllerL1Pressed);
