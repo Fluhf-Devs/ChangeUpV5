@@ -18,6 +18,7 @@
 // leftUpwards          motor         17              
 // rightUpwards         motor         8               
 // LineTracker2         line          B               
+// Accel6GC             accelerometer C               
 // ---- END VEXCODE CONFIGURED DEVICES ----
 
 #include "vex.h"

@@ -22,6 +22,7 @@ motor rightArmMotor = motor(PORT6, ratio6_1, true);
 motor leftUpwards = motor(PORT17, ratio6_1, false);
 motor rightUpwards = motor(PORT8, ratio6_1, true);
 line LineTracker2 = line(Brain.ThreeWirePort.B);
+accelerometer Accel6GC = accelerometer(Brain.ThreeWirePort.C, true);
 
 // VEXcode generated functions
 // define variable for remote controller enable/disable
