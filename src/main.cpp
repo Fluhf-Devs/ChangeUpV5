@@ -44,7 +44,7 @@ void whenControllerR2Pressed() {
 }
 
 void whenControllerL1Pressed() {
-  outakeMove(600, rpm, reverse);
+  outakeMove(700, rpm, reverse);
   waitUntil(!Controller1.ButtonL1.pressing());
   wait(5, msec);
   outakeStop();
