@@ -12,13 +12,13 @@
 // [Name]               [Type]        [Port(s)]
 // Controller1          controller                    
 // Drivetrain           drivetrain    1, 2, 3, 4      
-// LineTracker1         line          A               
 // leftArmMotor         motor         5               
 // rightArmMotor        motor         6               
 // leftUpwards          motor         17              
 // rightUpwards         motor         8               
-// LineTracker2         line          B               
-// Accel6GC             accelerometer C               
+// LineTrackerLEFT      line          A               
+// LineTrackerCENTER    line          B               
+// LineTrackerRIGHT     line          C               
 // ---- END VEXCODE CONFIGURED DEVICES ----
 
 #include "vex.h"

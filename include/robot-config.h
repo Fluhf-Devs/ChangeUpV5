@@ -5,13 +5,13 @@ extern brain Brain;
 // VEXcode devices
 extern controller Controller1;
 extern drivetrain Drivetrain;
-extern line LineTracker1;
 extern motor leftArmMotor;
 extern motor rightArmMotor;
 extern motor leftUpwards;
 extern motor rightUpwards;
-extern line LineTracker2;
-extern accelerometer Accel6GC;
+extern line LineTrackerLEFT;
+extern line LineTrackerCENTER;
+extern line LineTrackerRIGHT;
 
 /**
  * Used to initialize code/tasks/devices added using tools in VEXcode Pro.
