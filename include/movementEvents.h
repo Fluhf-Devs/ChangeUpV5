@@ -14,3 +14,4 @@ void driveTrainControl(double dis, vex::distanceUnits units);
 void driveTrainControl(double dis, vex::distanceUnits units, double speed, vex::velocityUnits vel);
 void skillsMainAuto();
 void competitionMainAuto();
+void lineTracking();
