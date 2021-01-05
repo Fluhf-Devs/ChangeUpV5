@@ -19,7 +19,6 @@
 // LineTrackerLEFT      line          A               
 // LineTrackerCENTER    line          B               
 // LineTrackerRIGHT     line          C               
-// Controller2          controller                    
 // ---- END VEXCODE CONFIGURED DEVICES ----
 
 #include "vex.h"

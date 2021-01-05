@@ -13,6 +13,8 @@
 /* skills autonomous code */
 
 void skillsMainAuto() {
+  // wheelbase and track width test
+  Drivetrain.turnFor(360, degrees);
   // spin the outakes
   outakeMove(600, rpm, reverse);
   wait(1000, msec);
@@ -35,7 +37,7 @@ void skillsMainAuto() {
   Drivetrain.stop();
   wait(1000, msec);
   // turn 180 degrees
-  Drivetrain.turnFor(left, 270, degrees);
+  Drivetrain.turnFor(left, 180, degrees);
   wait(1000, msec);
   // get the ball out
   intakeMove(600, rpm, reverse);
