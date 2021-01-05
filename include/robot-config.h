@@ -12,6 +12,7 @@ extern motor rightUpwards;
 extern line LineTrackerLEFT;
 extern line LineTrackerCENTER;
 extern line LineTrackerRIGHT;
+extern controller Controller2;
 
 /**
  * Used to initialize code/tasks/devices added using tools in VEXcode Pro.

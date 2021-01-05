@@ -23,6 +23,7 @@ motor rightUpwards = motor(PORT8, ratio6_1, true);
 line LineTrackerLEFT = line(Brain.ThreeWirePort.A);
 line LineTrackerCENTER = line(Brain.ThreeWirePort.B);
 line LineTrackerRIGHT = line(Brain.ThreeWirePort.C);
+controller Controller2 = controller(partner);
 
 // VEXcode generated functions
 // define variable for remote controller enable/disable
@@ -93,5 +94,5 @@ int rc_auto_loop_function_Controller1() {
  * This should be called at the start of your int main function.
  */
 void vexcodeInit( void ) {
-  task rc_auto_loop_task_Controller1(rc_auto_loop_function_Controller1);
+  // nothing to initialize
 }

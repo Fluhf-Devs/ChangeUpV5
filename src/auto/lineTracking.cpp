@@ -31,5 +31,10 @@ void lineTracking() {
       // counter steer right
       Drivetrain.turn(right);
     }
+    // all sensors see light
+    if(LineTrackerLEFT.reflectivity() < threshold && LineTrackerCENTER.reflectivity() < threshold && LineTrackerRIGHT.reflectivity() < threshold) {
+      // stop the drivetrain
+      Drivetrain.stop();
+    }
   }
 }
