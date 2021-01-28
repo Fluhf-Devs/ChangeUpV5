@@ -9,20 +9,16 @@ brain  Brain;
 
 // VEXcode device constructors
 controller Controller1 = controller(primary);
-motor leftMotorA = motor(PORT1, ratio18_1, false);
-motor leftMotorB = motor(PORT2, ratio18_1, false);
-motor_group LeftDriveSmart = motor_group(leftMotorA, leftMotorB);
-motor rightMotorA = motor(PORT3, ratio18_1, true);
-motor rightMotorB = motor(PORT4, ratio18_1, true);
-motor_group RightDriveSmart = motor_group(rightMotorA, rightMotorB);
-drivetrain Drivetrain = drivetrain(LeftDriveSmart, RightDriveSmart, 299.24, 241.29999999999998, 177.79999999999998, mm, 1);
-motor leftArmMotor = motor(PORT5, ratio6_1, false);
-motor rightArmMotor = motor(PORT6, ratio6_1, true);
-motor leftUpwards = motor(PORT17, ratio6_1, false);
-motor rightUpwards = motor(PORT8, ratio6_1, true);
+motor leftArmMotor = motor(PORT10, ratio18_1, false);
+motor rightArmMotor = motor(PORT18, ratio18_1, true);
+motor leftUpwards = motor(PORT1, ratio6_1, false);
+motor rightUpwards = motor(PORT19, ratio6_1, true);
 line LineTrackerLEFT = line(Brain.ThreeWirePort.A);
 line LineTrackerCENTER = line(Brain.ThreeWirePort.B);
 line LineTrackerRIGHT = line(Brain.ThreeWirePort.C);
+motor LeftDriveSmart = motor(PORT11, ratio18_1, false);
+motor RightDriveSmart = motor(PORT17, ratio18_1, true);
+drivetrain Drivetrain = drivetrain(LeftDriveSmart, RightDriveSmart, 319.19, 295, 40, mm, 1);
 
 // VEXcode generated functions
 // define variable for remote controller enable/disable
