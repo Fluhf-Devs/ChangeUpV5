@@ -18,7 +18,7 @@
 // LineTrackerLEFT      line          A               
 // LineTrackerCENTER    line          B               
 // LineTrackerRIGHT     line          C               
-// Drivetrain           drivetrain    11, 17          
+// Drivetrain           drivetrain    2, 11, 20, 17   
 // ---- END VEXCODE CONFIGURED DEVICES ----
 
 #include "vex.h"
@@ -95,6 +95,13 @@ void whenControllerButonXPressed() {
 
 void usercontrol() {
   // callbacks for the buttons here so that it does not work during the autonomous period
+  // stop everything, just a test for autonomous
+  leftArmMotor.stop();
+  rightArmMotor.stop();
+  leftUpwards.stop();
+  rightUpwards.stop();
+  Drivetrain.stop();
+  // NORMAL CONTROLS
   Controller1.ButtonR1.pressed(whenControllerR1Pressed);
   Controller1.ButtonR2.pressed(whenControllerR2Pressed);
   Controller1.ButtonL1.pressed(whenControllerL1Pressed);
@@ -103,63 +110,6 @@ void usercontrol() {
   Controller1.ButtonRight.pressed(whenControllerButtonRightPressed);
   Controller1.ButtonDown.pressed(whenControllerButtonDownPressed);
   Controller1.ButtonLeft.pressed(whenControllerButtonLeftPressed);
-}
-
-void compAuto() {
-  Drivetrain.setDriveVelocity(75, percent);
-  // drive forward 23.5 inches
-  Drivetrain.driveFor(12, inches);
-  // wait 200 msec
-  wait(200, msec);
-  // turn 90 degrees
-  Drivetrain.turnFor(left, 90, degrees);
-  // wait 100 msec
-  wait(100, msec);
-  // drive forward for 36 inches
-  Drivetrain.driveFor(forward, 31, inches);
-  // wait 100 msec
-  wait(100, msec);
-  // turn left 90 degrees
-  Drivetrain.turnFor(left, 90, degrees);
-  // wait 100 msec
-  wait(100, msec);
-  // drive forward for 2 seconds
-  Drivetrain.drive(forward);
-  wait(2, sec);
-  Drivetrain.stop();
-  leftUpwards.spin(reverse, 600, rpm);
-  rightUpwards.spin(reverse, 600, rpm);
-  wait(500, msec);
-  leftUpwards.stop();
-  rightUpwards.stop();
-  // reverse 12 inches
-  Drivetrain.setDriveVelocity(50, percent);
-  Drivetrain.driveFor(reverse, 10, inches);
-  Drivetrain.setDriveVelocity(75, percent);
-  // wait 100 mec
-  wait(100, msec);
-  // rturn left 90 degrees
-  Drivetrain.turnFor(left, 90, degrees);
-  // wait 100
-  wait(100, msec);
-  // drive forward 36 inches
-  Drivetrain.driveFor(forward, 42, inches);
-  // wait 100 msec
-  wait(100, msec);
-  // turn right 45 degrees
-  Drivetrain.turnFor(right, 45, degrees);
-  // wait 100 msec
-  wait(100, msec);
-  // spin the intakes and outakes
-  leftUpwards.spin(reverse, 600, rpm);
-  rightUpwards.spin(reverse, 600, rpm);
-  rightArmMotor.spin(forward, 600, rpm);
-  leftArmMotor.spin(forward, 600, rpm);
-  Drivetrain.setDriveVelocity(25, percent);
-  Drivetrain.drive(forward);
-
-
-  
 }
 
 int main() {
@@ -171,7 +121,7 @@ int main() {
   Controller1.ButtonX.pressed(whenControllerButonXPressed);
 
   // set the callbacks for drivercontrol and usercontrol periods
-  Competition.autonomous(compAuto);
+  Competition.autonomous(competitionMainAuto);
   Competition.drivercontrol(usercontrol);
 
   // Set the intake and outake motors stopping mode

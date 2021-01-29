@@ -16,9 +16,13 @@ motor rightUpwards = motor(PORT19, ratio6_1, true);
 line LineTrackerLEFT = line(Brain.ThreeWirePort.A);
 line LineTrackerCENTER = line(Brain.ThreeWirePort.B);
 line LineTrackerRIGHT = line(Brain.ThreeWirePort.C);
-motor LeftDriveSmart = motor(PORT11, ratio18_1, false);
-motor RightDriveSmart = motor(PORT17, ratio18_1, true);
-drivetrain Drivetrain = drivetrain(LeftDriveSmart, RightDriveSmart, 319.19, 295, 40, mm, 1);
+motor leftMotorA = motor(PORT2, ratio18_1, false);
+motor leftMotorB = motor(PORT11, ratio18_1, false);
+motor_group LeftDriveSmart = motor_group(leftMotorA, leftMotorB);
+motor rightMotorA = motor(PORT20, ratio18_1, true);
+motor rightMotorB = motor(PORT17, ratio18_1, true);
+motor_group RightDriveSmart = motor_group(rightMotorA, rightMotorB);
+drivetrain Drivetrain = drivetrain(LeftDriveSmart, RightDriveSmart, 219.44, 276.86, 7.112, mm, 1);
 
 // VEXcode generated functions
 // define variable for remote controller enable/disable
