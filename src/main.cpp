@@ -22,12 +22,9 @@
 // ---- END VEXCODE CONFIGURED DEVICES ----
 
 #include "vex.h"
-#include "movementEvents.h"
+#include "functions.h"
 
 competition Competition;
-
-int test = 0;
-int skillsAuto = 0;
 
 void whenControllerR1Pressed() {
   intakeMove(200, rpm, forward);
@@ -85,15 +82,11 @@ void whenControllerButtonLeftPressed() {
   Drivetrain.stop();
 }
 
-void whenControllerButtonBPressed() {
-  skillsMainAuto();
-}
-
-void whenControllerButonXPressed() {
-  ++test;
-}
-
 void usercontrol() {
+  // call shapeDrawer function
+  shapeDrawer();
+  // test drive forward 12 inches
+  Drivetrain.driveFor(forward, 12, inches);
   // callbacks for the buttons here so that it does not work during the autonomous period
   // stop everything, just a test for autonomous
   leftArmMotor.stop();
@@ -101,7 +94,7 @@ void usercontrol() {
   leftUpwards.stop();
   rightUpwards.stop();
   Drivetrain.stop();
-  // NORMAL CONTROLS
+  // callbacks for driver contol functions
   Controller1.ButtonR1.pressed(whenControllerR1Pressed);
   Controller1.ButtonR2.pressed(whenControllerR2Pressed);
   Controller1.ButtonL1.pressed(whenControllerL1Pressed);
@@ -116,10 +109,6 @@ int main() {
   // Initializing Robot Configuration. DO NOT REMOVE!
   vexcodeInit();
 
-  // set the callbacks for testing mode
-  Controller1.ButtonB.pressed(whenControllerButtonBPressed);
-  Controller1.ButtonX.pressed(whenControllerButonXPressed);
-
   // set the callbacks for drivercontrol and usercontrol periods
   Competition.autonomous(competitionMainAuto);
   Competition.drivercontrol(usercontrol);
@@ -130,17 +119,4 @@ int main() {
   leftArmMotor.setStopping(coast);
   rightArmMotor.setStopping(coast);
   Drivetrain.setStopping(coast);
-
-  // enter test mode
-  while (test>=1) {
-    Controller1.ButtonR1.pressed(whenControllerR1Pressed);
-    Controller1.ButtonR2.pressed(whenControllerR2Pressed);
-    Controller1.ButtonL1.pressed(whenControllerL1Pressed);
-    Controller1.ButtonL2.pressed(whenControllerL2Pressed);
-    Controller1.ButtonUp.pressed(whenControllerButtonUpPressed);
-    Controller1.ButtonRight.pressed(whenControllerButtonRightPressed);
-    Controller1.ButtonDown.pressed(whenControllerButtonDownPressed);
-    Controller1.ButtonLeft.pressed(whenControllerButtonLeftPressed);
-  }  
-  
 }

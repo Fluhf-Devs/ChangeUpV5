@@ -8,7 +8,7 @@
 /*----------------------------------------------------------------------------*/
 
 #include "vex.h"
-#include "movementEvents.h"
+#include "functions.h"
 
 int threshold;
 

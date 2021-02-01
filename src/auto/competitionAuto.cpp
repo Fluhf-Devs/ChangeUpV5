@@ -8,7 +8,7 @@
 /*----------------------------------------------------------------------------*/
 
 #include "vex.h"
-#include "movementEvents.h"
+#include "functions.h"
 
 /* competition autonomous code */
 
@@ -30,7 +30,7 @@ void competitionMainAuto() {
   Drivetrain.stop();
   leftUpwards.spin(reverse, 600, rpm);
   rightUpwards.spin(reverse, 600, rpm);
-  wait(500, msec);
+  wait(700, msec);
   leftUpwards.stop();
   rightUpwards.stop();
   // reverse 11 inches
@@ -48,13 +48,13 @@ void competitionMainAuto() {
   // wait 100 msec
   wait(100, msec);
   // turn right 45 degrees
-  Drivetrain.turnFor(right, 45, degrees);
+  Drivetrain.turnFor(right, 35, degrees);
   // wait 100 msec
   wait(100, msec);
   // spin the intakes and outakes
   rightArmMotor.spin(forward, 600, rpm);
   leftArmMotor.spin(forward, 600, rpm);
-  Drivetrain.setDriveVelocity(40, percent);
+  Drivetrain.setDriveVelocity(30, percent);
   Drivetrain.drive(forward);
   wait(500, msec);
   leftUpwards.spin(reverse, 600, rpm);

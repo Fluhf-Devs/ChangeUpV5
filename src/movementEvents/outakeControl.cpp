@@ -8,7 +8,7 @@
 /*----------------------------------------------------------------------------*/
 
 #include "vex.h"
-#include "movementEvents.h"
+#include "functions.h"
 
 /* Shorten the functions in main.cpp and in autoMain.cpp for controlling the outakes*/
 
