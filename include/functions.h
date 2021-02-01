@@ -16,3 +16,6 @@ void skillsMainAuto();
 void competitionMainAuto();
 void lineTracking();
 int brainScreen();
+extern bool isSkills;
+extern std::string startingPosition;
+extern int goals;
