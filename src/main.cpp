@@ -109,8 +109,7 @@ int main() {
   // Initializing Robot Configuration. DO NOT REMOVE!
   vexcodeInit();
 
-  // set the callbacks for drivercontrol and usercontrol periods
-  Competition.autonomous(competitionMainAuto);
+  // set the callbacks for drivercontrol period
   Competition.drivercontrol(usercontrol);
 
   // Set the intake and outake motors stopping mode

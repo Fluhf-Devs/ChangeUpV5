@@ -19,3 +19,5 @@ int brainScreen();
 extern bool isSkills;
 extern std::string startingPosition;
 extern int goals;
+extern vex::turnType dir1;
+extern vex::turnType dir2;
