@@ -15,4 +15,4 @@ void driveTrainControl(double dis, vex::distanceUnits units, double speed, vex::
 void skillsMainAuto();
 void competitionMainAuto();
 void lineTracking();
-void shapeDrawer();
+int brainScreen();

@@ -84,7 +84,7 @@ void whenControllerButtonLeftPressed() {
 
 void usercontrol() {
   // call shapeDrawer function
-  shapeDrawer();
+  thread brainScreenThread = thread(brainScreen);
   // test drive forward 12 inches
   Drivetrain.driveFor(forward, 12, inches);
   // callbacks for the buttons here so that it does not work during the autonomous period
