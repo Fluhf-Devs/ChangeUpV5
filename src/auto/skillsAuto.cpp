@@ -13,6 +13,8 @@
 /* skills autonomous code */
 
 void skillsMainAuto() {
+  // set timer for brain screen
+  customTimer = 60;
   // wheelbase and track width test
   Drivetrain.turnFor(360, degrees);
   // spin the outakes

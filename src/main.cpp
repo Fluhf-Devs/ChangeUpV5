@@ -81,7 +81,14 @@ void whenControllerButtonLeftPressed() {
 }
 
 void usercontrol() {
-  // stop everything, just a test for autonomous
+  // set custom timers
+  if(isSkills == true) {
+    customTimer = 60;
+  } else if (isSkills == false){
+    customTimer = 105;
+  }
+
+  // stop everything, just to simulate comm switch when not actually using one
   leftArmMotor.stop();
   rightArmMotor.stop();
   leftUpwards.stop();
@@ -101,7 +108,7 @@ void usercontrol() {
 int main() {
   // Initializing Robot Configuration. DO NOT REMOVE!
   vexcodeInit();
-
+  
   // read config file
   configWork();
 
