@@ -14,7 +14,9 @@ using namespace std;
 
 // should it use skills or competition autonomous?
 bool isSkills = false;
-// Where is the starting position?
+
+// Where is the starting position? (left or right)
 string startingPosition = "right";
+
 // how many goals should it score?
 int goals = 2;
