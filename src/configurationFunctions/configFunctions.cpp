@@ -11,6 +11,12 @@
 #include "functions.h"
 
 void configWork() {
+  // declare competition and declare usercontrol function
+  competition Competition;
+  // declare usercontrol
+  Competition.drivercontrol(usercontrol);
+  
+  // now to read the config file!
   if (isSkills == true) {
     Competition.autonomous(skillsMainAuto);
   } else if (isSkills == false) {
