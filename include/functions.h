@@ -23,3 +23,5 @@ extern vex::turnType dir1;
 extern vex::turnType dir2;
 void usercontrol();
 void configWork();
+extern int competitionAutoTimer;
+extern int competitionDriverControlTimer;

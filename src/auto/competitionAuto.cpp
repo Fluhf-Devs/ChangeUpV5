@@ -13,6 +13,9 @@
 /* competition autonomous code */
 
 void competitionMainAuto() {
+  // call auto brain screen function
+  thread autobrainScreenThread = thread(autoBrainScreen);
+  // set drivetrain velocity to 50% for accurate disctance
   Drivetrain.setDriveVelocity(50, percent);
   // drive forward 12 inches
   Drivetrain.driveFor(12, inches);
