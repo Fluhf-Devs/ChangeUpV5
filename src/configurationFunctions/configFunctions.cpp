@@ -10,8 +10,6 @@
 #include "vex.h"
 #include "functions.h"
 
-competition Competition;
-
 void configWork() {
   if (isSkills == true) {
     Competition.autonomous(skillsMainAuto);

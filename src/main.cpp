@@ -24,8 +24,6 @@
 #include "vex.h"
 #include "functions.h"
 
-competition Competition;
-
 void whenControllerR1Pressed() {
   intakeMove(200, rpm, forward);
   waitUntil(!Controller1.ButtonR1.pressing());
