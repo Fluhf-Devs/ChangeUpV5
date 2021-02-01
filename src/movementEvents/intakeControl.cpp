@@ -10,7 +10,7 @@
 #include "vex.h"
 #include "functions.h"
 
-/* Shorten the functions in main.cpp and in autoMain.cpp for controlling the intakes*/
+/* Shorten the functions in main.cpp and in autonomous files for controlling the intakes*/
 
 void intakeMove(int speed, vex::percentUnits pt, vex::directionType Mdir) {
   // set the motors velocity for maximum speed

@@ -24,8 +24,6 @@
 #include "vex.h"
 #include "functions.h"
 
-competition Competition;
-
 void whenControllerR1Pressed() {
   intakeMove(200, rpm, forward);
   waitUntil(!Controller1.ButtonR1.pressing());
@@ -104,9 +102,8 @@ int main() {
   // Initializing Robot Configuration. DO NOT REMOVE!
   vexcodeInit();
 
-  // set the callbacks for drivercontrol and usercontrol periods
-  Competition.autonomous(competitionMainAuto);
-  Competition.drivercontrol(usercontrol);
+  // read config file
+  configWork();
 
   // Set the intake and outake motors stopping mode
   leftUpwards.setStopping(coast);
