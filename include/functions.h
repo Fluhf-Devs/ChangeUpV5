@@ -15,4 +15,6 @@ void driveTrainControl(double dis, vex::distanceUnits units, double speed, vex::
 void skillsMainAuto();
 void competitionMainAuto();
 void lineTracking();
-int brainScreen();
+int autoBrainScreen();
+extern int competitionAutoTimer;
+extern int competitionDriverControlTimer;
