@@ -107,6 +107,9 @@ int main() {
   // Initializing Robot Configuration. DO NOT REMOVE!
   vexcodeInit();
 
+  // read config file
+  configWork();
+
   // Set the intake and outake motors stopping mode
   leftUpwards.setStopping(coast);
   rightUpwards.setStopping(coast);

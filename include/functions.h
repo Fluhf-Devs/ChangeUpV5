@@ -22,3 +22,4 @@ extern int goals;
 extern vex::turnType dir1;
 extern vex::turnType dir2;
 void usercontrol();
+void configWork();
