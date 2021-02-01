@@ -10,6 +10,10 @@
 #include "vex.h"
 #include "functions.h"
 
+// define and assign values to these variables
+vex::turnType dir1 = left;
+vex::turnType dir2 = right;
+
 void configWork() {
   // declare competition and declare usercontrol function
   competition Competition;

@@ -17,6 +17,7 @@ void competitionMainAuto() {
   // drive forward 12 inches
   Drivetrain.driveFor(12, inches);
 
+  // checks if it should score 1 or 2 goals
   if (goals == 2) {
     // turn 90 degrees
     Drivetrain.turnFor(dir1, 90, degrees);
