@@ -1,6 +1,6 @@
 /*----------------------------------------------------------------------------*/
 /*                                                                            */
-/*    Module:       skillsAuto.cpp                                             */
+/*    Module:       skillsAuto.cpp                                            */
 /*    Author:       Liam Teale                                                */
 /*    Created:      Thu Nov 26 2020                                           */
 /*    Description:  V5 ChangeUp Robot                                         */

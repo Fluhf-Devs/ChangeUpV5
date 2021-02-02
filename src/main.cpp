@@ -10,96 +10,6 @@
 // LimitSwitchIntake    limit         A               
 // Accel2GB             accelerometer B               
 // ---- END VEXCODE CONFIGURED DEVICES ----
-// ---- START VEXCODE CONFIGURED DEVICES ----
-// Robot Configuration:
-// [Name]               [Type]        [Port(s)]
-// Controller1          controller                    
-// leftArmMotor         motor         10              
-// rightArmMotor        motor         18              
-// leftUpwards          motor         1               
-// rightUpwards         motor         19              
-// Drivetrain           drivetrain    2, 11, 20, 17   
-// LimitSwitchIntake    limit         A               
-// Accel2GB             accelerometer B               
-// ---- END VEXCODE CONFIGURED DEVICES ----
-// ---- START VEXCODE CONFIGURED DEVICES ----
-// Robot Configuration:
-// [Name]               [Type]        [Port(s)]
-// Controller1          controller                    
-// leftArmMotor         motor         10              
-// rightArmMotor        motor         18              
-// leftUpwards          motor         1               
-// rightUpwards         motor         19              
-// Drivetrain           drivetrain    2, 11, 20, 17   
-// LimitSwitchIntake    limit         A               
-// Accel2GB             accelerometer B               
-// ---- END VEXCODE CONFIGURED DEVICES ----
-// ---- START VEXCODE CONFIGURED DEVICES ----
-// Robot Configuration:
-// [Name]               [Type]        [Port(s)]
-// Controller1          controller                    
-// leftArmMotor         motor         10              
-// rightArmMotor        motor         18              
-// leftUpwards          motor         1               
-// rightUpwards         motor         19              
-// Drivetrain           drivetrain    2, 11, 20, 17   
-// LimitSwitchIntake    limit         A               
-// ---- END VEXCODE CONFIGURED DEVICES ----
-// ---- START VEXCODE CONFIGURED DEVICES ----
-// Robot Configuration:
-// [Name]               [Type]        [Port(s)]
-// Controller1          controller                    
-// leftArmMotor         motor         10              
-// rightArmMotor        motor         18              
-// leftUpwards          motor         1               
-// rightUpwards         motor         19              
-// Drivetrain           drivetrain    2, 11, 20, 17   
-// ---- END VEXCODE CONFIGURED DEVICES ----
-// ---- START VEXCODE CONFIGURED DEVICES ----
-// Robot Configuration:
-// [Name]               [Type]        [Port(s)]
-// Controller1          controller                    
-// leftArmMotor         motor         10              
-// rightArmMotor        motor         18              
-// leftUpwards          motor         1               
-// rightUpwards         motor         19              
-// LineTrackerRIGHT     line          C               
-// Drivetrain           drivetrain    2, 11, 20, 17   
-// ---- END VEXCODE CONFIGURED DEVICES ----
-// ---- START VEXCODE CONFIGURED DEVICES ----
-// Robot Configuration:
-// [Name]               [Type]        [Port(s)]
-// Controller1          controller                    
-// leftArmMotor         motor         10              
-// rightArmMotor        motor         18              
-// leftUpwards          motor         1               
-// rightUpwards         motor         19              
-// LineTrackerCENTER    line          B               
-// LineTrackerRIGHT     line          C               
-// Drivetrain           drivetrain    2, 11, 20, 17   
-// ---- END VEXCODE CONFIGURED DEVICES ----
-/*----------------------------------------------------------------------------*/
-/*                                                                            */
-/*    Module:       main.cpp                                                  */
-/*    Author:       Liam Teale                                                */
-/*    Created:      Thu Nov 26 2020                                           */
-/*    Description:  V5 ChangeUp Robot                                         */ 
-/*                                                                            */
-/*----------------------------------------------------------------------------*/
-
-// ---- START VEXCODE CONFIGURED DEVICES ----
-// Robot Configuration:
-// [Name]               [Type]        [Port(s)]
-// Controller1          controller                    
-// leftArmMotor         motor         10              
-// rightArmMotor        motor         18              
-// leftUpwards          motor         1               
-// rightUpwards         motor         19              
-// LineTrackerLEFT      line          A               
-// LineTrackerCENTER    line          B               
-// LineTrackerRIGHT     line          C               
-// Drivetrain           drivetrain    2, 11, 20, 17   
-// ---- END VEXCODE CONFIGURED DEVICES ----
 
 #include "vex.h"
 #include "functions.h"
@@ -193,6 +103,9 @@ int main() {
   thread autobrainScreenThread = thread(brainScreen);
   // read config file
   configWork();
+
+  // call the pre autonomous
+  preAuton();
 
   // Set the intake and outake motors stopping mode
   leftUpwards.setStopping(coast);
