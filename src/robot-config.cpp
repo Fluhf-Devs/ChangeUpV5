@@ -22,7 +22,6 @@ motor_group RightDriveSmart = motor_group(rightMotorA, rightMotorB);
 drivetrain Drivetrain = drivetrain(LeftDriveSmart, RightDriveSmart, 219.44, 276.86, 7.112, mm, 1);
 limit LimitSwitchIntake = limit(Brain.ThreeWirePort.A);
 accelerometer Accel2GB = accelerometer(Brain.ThreeWirePort.B);
-gyro GyroC = gyro(Brain.ThreeWirePort.C);
 
 // VEXcode generated functions
 // define variable for remote controller enable/disable

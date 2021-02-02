@@ -11,7 +11,6 @@ extern motor rightUpwards;
 extern drivetrain Drivetrain;
 extern limit LimitSwitchIntake;
 extern accelerometer Accel2GB;
-extern gyro GyroC;
 
 /**
  * Used to initialize code/tasks/devices added using tools in VEXcode Pro.
