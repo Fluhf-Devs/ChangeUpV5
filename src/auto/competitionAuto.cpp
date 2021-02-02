@@ -22,12 +22,20 @@ void competitionMainAuto() {
 
   // checks if it should score 1 or 2 goals
   if (goals == 2) {
+    // set gyro heading to 0 degrees
+    GyroC.setHeading(0, degrees);
     // turn 90 degrees
-    Drivetrain.turnFor(dir1, 90, degrees);
-    // drive forward for 36 inches
-    Drivetrain.driveFor(forward, 31, inches);
-    // turn left 90 degrees
-    Drivetrain.turnFor(dir1, 90, degrees);
+    Drivetrain.turn(dir1);
+    // wait until heading > 90 degrees
+    waitUntil(GyroC.heading() > 90);
+    // stop the drivetrain
+    Drivetrain.stop();
+    // drive forward for 29 inches
+    Drivetrain.driveFor(forward, 29, inches);
+    // turn to heading 180
+    Drivetrain.turn(dir1);
+    waitUntil(GyroC.heading() > 180);
+    Drivetrain.stop();
     // wait 100 msec
     wait(100, msec);
     // drive forward for 1000 msec
@@ -45,16 +53,19 @@ void competitionMainAuto() {
     Drivetrain.setDriveVelocity(75, percent);
     // wait 100 mec
     wait(100, msec);
-    // rturn left 80 degrees
-    Drivetrain.turnFor(dir1, 80, degrees);
+    // turn left 90 degrees
+    Drivetrain.turn(dir1);
+    waitUntil(GyroC.heading() < 90);
+    Drivetrain.stop();
     // wait 100
     wait(100, msec);
-    // drive forward 36 inches
-    Drivetrain.driveFor(forward, 44, inches);
+    // drive forward 42 inches
+    Drivetrain.driveFor(forward, 42, inches);
     // wait 100 msec
     wait(100, msec);
     // turn right 45 degrees
-    Drivetrain.turnFor(dir2, 35, degrees);
+    Drivetrain.turn(dir2);
+    waitUntil(GyroC.heading() > 225);
     // wait 100 msec
     wait(100, msec);
     // spin the intakes and outakes
