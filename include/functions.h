@@ -24,4 +24,3 @@ extern vex::turnType dir2;
 void usercontrol();
 void configWork();
 extern int customTimer;
-void preAuton();

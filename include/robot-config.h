@@ -11,6 +11,14 @@ extern motor rightUpwards;
 extern drivetrain Drivetrain;
 extern limit LimitSwitchIntake;
 extern accelerometer Accel2GB;
+extern motor leftMotorA;
+extern motor leftMotorB;
+extern motor rightMotorA;
+extern motor rightMotorB;
+extern motor_group LeftDriveSmart;
+extern motor_group RightDriveSmart;
+
+
 
 /**
  * Used to initialize code/tasks/devices added using tools in VEXcode Pro.

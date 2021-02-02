@@ -1,4 +1,5 @@
 #include "vex.h"
+#include "functions.h"
 
 using namespace vex;
 using signature = vision::signature;

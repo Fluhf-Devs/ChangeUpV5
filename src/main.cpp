@@ -105,9 +105,6 @@ int main() {
   // read config file
   configWork();
 
-  // call the pre autonomous
-  preAuton();
-
   // Set the intake and outake motors stopping mode
   leftUpwards.setStopping(coast);
   rightUpwards.setStopping(coast);
