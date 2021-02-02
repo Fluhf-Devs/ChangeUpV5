@@ -1,3 +1,83 @@
+// ---- START VEXCODE CONFIGURED DEVICES ----
+// Robot Configuration:
+// [Name]               [Type]        [Port(s)]
+// Controller1          controller                    
+// leftArmMotor         motor         10              
+// rightArmMotor        motor         18              
+// leftUpwards          motor         1               
+// rightUpwards         motor         19              
+// Drivetrain           drivetrain    2, 11, 20, 17, C
+// LimitSwitchIntake    limit         A               
+// Accel2GB             accelerometer B               
+// ---- END VEXCODE CONFIGURED DEVICES ----
+// ---- START VEXCODE CONFIGURED DEVICES ----
+// Robot Configuration:
+// [Name]               [Type]        [Port(s)]
+// Controller1          controller                    
+// leftArmMotor         motor         10              
+// rightArmMotor        motor         18              
+// leftUpwards          motor         1               
+// rightUpwards         motor         19              
+// Drivetrain           drivetrain    2, 11, 20, 17   
+// LimitSwitchIntake    limit         A               
+// Accel2GB             accelerometer B               
+// ---- END VEXCODE CONFIGURED DEVICES ----
+// ---- START VEXCODE CONFIGURED DEVICES ----
+// Robot Configuration:
+// [Name]               [Type]        [Port(s)]
+// Controller1          controller                    
+// leftArmMotor         motor         10              
+// rightArmMotor        motor         18              
+// leftUpwards          motor         1               
+// rightUpwards         motor         19              
+// Drivetrain           drivetrain    2, 11, 20, 17   
+// LimitSwitchIntake    limit         A               
+// Accel2GB             accelerometer B               
+// ---- END VEXCODE CONFIGURED DEVICES ----
+// ---- START VEXCODE CONFIGURED DEVICES ----
+// Robot Configuration:
+// [Name]               [Type]        [Port(s)]
+// Controller1          controller                    
+// leftArmMotor         motor         10              
+// rightArmMotor        motor         18              
+// leftUpwards          motor         1               
+// rightUpwards         motor         19              
+// Drivetrain           drivetrain    2, 11, 20, 17   
+// LimitSwitchIntake    limit         A               
+// ---- END VEXCODE CONFIGURED DEVICES ----
+// ---- START VEXCODE CONFIGURED DEVICES ----
+// Robot Configuration:
+// [Name]               [Type]        [Port(s)]
+// Controller1          controller                    
+// leftArmMotor         motor         10              
+// rightArmMotor        motor         18              
+// leftUpwards          motor         1               
+// rightUpwards         motor         19              
+// Drivetrain           drivetrain    2, 11, 20, 17   
+// ---- END VEXCODE CONFIGURED DEVICES ----
+// ---- START VEXCODE CONFIGURED DEVICES ----
+// Robot Configuration:
+// [Name]               [Type]        [Port(s)]
+// Controller1          controller                    
+// leftArmMotor         motor         10              
+// rightArmMotor        motor         18              
+// leftUpwards          motor         1               
+// rightUpwards         motor         19              
+// LineTrackerRIGHT     line          C               
+// Drivetrain           drivetrain    2, 11, 20, 17   
+// ---- END VEXCODE CONFIGURED DEVICES ----
+// ---- START VEXCODE CONFIGURED DEVICES ----
+// Robot Configuration:
+// [Name]               [Type]        [Port(s)]
+// Controller1          controller                    
+// leftArmMotor         motor         10              
+// rightArmMotor        motor         18              
+// leftUpwards          motor         1               
+// rightUpwards         motor         19              
+// LineTrackerCENTER    line          B               
+// LineTrackerRIGHT     line          C               
+// Drivetrain           drivetrain    2, 11, 20, 17   
+// ---- END VEXCODE CONFIGURED DEVICES ----
 /*----------------------------------------------------------------------------*/
 /*                                                                            */
 /*    Module:       main.cpp                                                  */

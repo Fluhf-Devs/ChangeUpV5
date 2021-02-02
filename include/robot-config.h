@@ -8,10 +8,9 @@ extern motor leftArmMotor;
 extern motor rightArmMotor;
 extern motor leftUpwards;
 extern motor rightUpwards;
-extern line LineTrackerLEFT;
-extern line LineTrackerCENTER;
-extern line LineTrackerRIGHT;
-extern drivetrain Drivetrain;
+extern smartdrive Drivetrain;
+extern limit LimitSwitchIntake;
+extern accelerometer Accel2GB;
 
 /**
  * Used to initialize code/tasks/devices added using tools in VEXcode Pro.
