@@ -15,7 +15,7 @@ void driveTrainControl(double dis, vex::distanceUnits units, double speed, vex::
 void skillsMainAuto();
 void competitionMainAuto();
 void lineTracking();
-int autoBrainScreen();
+int brainScreen();
 extern bool isSkills;
 extern std::string startingPosition;
 extern int goals;

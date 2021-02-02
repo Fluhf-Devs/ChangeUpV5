@@ -109,6 +109,8 @@ int main() {
   // Initializing Robot Configuration. DO NOT REMOVE!
   vexcodeInit();
   
+  // enable brain screen
+  thread autobrainScreenThread = thread(brainScreen);
   // read config file
   configWork();
 

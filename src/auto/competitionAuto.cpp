@@ -15,8 +15,6 @@
 void competitionMainAuto() {
   // set custom timer to 15
   customTimer = 15;
-  // call auto brain screen function
-  thread autobrainScreenThread = thread(autoBrainScreen);
   // set drivetrain velocity to 50% for accurate disctance
   Drivetrain.setDriveVelocity(50, percent);
   // drive forward 12 inches
