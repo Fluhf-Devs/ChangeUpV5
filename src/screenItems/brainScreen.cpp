@@ -17,14 +17,10 @@ int autoBrainScreen() {
   Brain.Screen.setPenColor(white);
   Brain.Screen.setFillColor(transparent);
   Brain.Screen.drawRectangle(25, 110, 50, 110);
-  Brain.Screen.drawRectangle(150, 110, 175, 110);
+  Brain.Screen.drawRectangle(75, 110, 100, 110);
 
   
   for(;;) {
-    Brain.Screen.setPenColor(white);
-    Brain.Screen.setFillColor(transparent);
-    Brain.Screen.drawRectangle(25, 110, 50, 110);
-    Brain.Screen.drawRectangle(75, 110, 100, 110);
     // display text in the boxes
     Brain.Screen.printAt(37, 165, "Battery: %d percent", Brain.Battery.capacity());
     Brain.Screen.printAt(87, 185, "Time: %d ", customTimer);

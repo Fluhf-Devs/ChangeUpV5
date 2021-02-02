@@ -83,5 +83,12 @@ void competitionMainAuto() {
     wait(500, msec);
     leftUpwards.spin(reverse, 600, rpm);
     rightUpwards.spin(reverse, 600, rpm);
+    // wait 2 seconds then stop
+    wait(2, sec);
+    rightArmMotor.stop();
+    leftArmMotor.stop();
+    Drivetrain.stop();
+    leftUpwards.stop();
+    rightUpwards.stop();
   }
 }
