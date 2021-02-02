@@ -6,7 +6,7 @@
 // rightArmMotor        motor         18              
 // leftUpwards          motor         1               
 // rightUpwards         motor         19              
-// Drivetrain           drivetrain    2, 11, 20, 17, C
+// Drivetrain           drivetrain    2, 11, 20, 17   
 // LimitSwitchIntake    limit         A               
 // Accel2GB             accelerometer B               
 // ---- END VEXCODE CONFIGURED DEVICES ----

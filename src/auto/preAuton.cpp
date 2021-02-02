@@ -11,8 +11,5 @@
 #include "functions.h"
 
 void preAuton() {
-  // calibrate the gyro
-  GyroC.calibrate();
-  // end the function
-  waitUntil(!GyroC.isCalibrating());
+  
 }

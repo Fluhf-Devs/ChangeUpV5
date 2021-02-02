@@ -30,9 +30,9 @@ void competitionMainAuto() {
     Drivetrain.turnFor(dir1, 90, degrees);
     // wait 100 msec
     wait(100, msec);
-    // drive forward for 1000 msec
+    // drive forward to goal
     Drivetrain.drive(forward);
-    wait(1000, msec);
+    waitUntil(Accel2GB.acceleration() > .2);
     Drivetrain.stop();
     leftUpwards.spin(reverse, 600, rpm);
     rightUpwards.spin(reverse, 600, rpm);
@@ -62,7 +62,10 @@ void competitionMainAuto() {
     leftArmMotor.spin(forward, 600, rpm);
     Drivetrain.setDriveVelocity(30, percent);
     Drivetrain.drive(forward);
-    wait(500, msec);
+    waitUntil(LimitSwitchIntake.pressing());
+    Drivetrain.setDriveVelocity(100, percent);
+    leftArmMotor.stop();
+    rightArmMotor.stop();
     leftUpwards.spin(reverse, 600, rpm);
     rightUpwards.spin(reverse, 600, rpm);
 
@@ -78,15 +81,18 @@ void competitionMainAuto() {
     leftArmMotor.spin(forward, 600, rpm);
     Drivetrain.setDriveVelocity(30, percent);
     Drivetrain.drive(forward);
-    wait(500, msec);
+    waitUntil(LimitSwitchIntake.pressing());
+    Drivetrain.setDriveVelocity(100, percent);
+    leftArmMotor.stop();
+    rightArmMotor.stop();
     leftUpwards.spin(reverse, 600, rpm);
     rightUpwards.spin(reverse, 600, rpm);
-    // wait 2 seconds then stop
-    wait(2, sec);
-    rightArmMotor.stop();
-    leftArmMotor.stop();
+    // detect collision, then wait 500 msec, then stop
+    waitUntil(Accel2GB.acceleration() > .2 );
     Drivetrain.stop();
+    wait(500, msec);
     leftUpwards.stop();
     rightUpwards.stop();
+
   }
 }
