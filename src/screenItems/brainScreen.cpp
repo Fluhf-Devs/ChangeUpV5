@@ -1,6 +1,6 @@
 /*----------------------------------------------------------------------------*/
 /*                                                                            */
-/*    Module:       screenShapes.cpp                                          */
+/*    Module:       brainScreen.cpp                                           */
 /*    Author:       Liam Teale                                                */
 /*    Created:      Jan 31 2021                                               */
 /*    Description:  V5 ChangeUp Robot                                         */
@@ -23,20 +23,24 @@ int brainScreen() {
   Brain.Screen.setPenColor(green);
   Brain.Screen.print("10012W");
   Brain.Screen.setPenColor(white);
+  Controller1.Screen.newLine();
 
   
   for(;;) {
     Brain.Screen.setFont(monoL);
     
     // display text in the boxes
+    Brain.Screen.print(Accel2GB.acceleration());
     Brain.Screen.printAt(20, 150, "Battery:");
     Brain.Screen.printAt(20, 200, "%d percent", Brain.Battery.capacity());
     Brain.Screen.printAt(250, 175, "Time: %d ", customTimer);
+    Controller1.Screen.print(Accel2GB.acceleration());
     // sleep 1000 msecs
     this_thread::sleep_for(1000);
     // clear the line
     Brain.Screen.clearLine(20, 200);
     Brain.Screen.clearLine(250, 175);
+    Controller1.Screen.print(customTimer);
     // post decrement auto Timer
     if (customTimer > 0) {
       customTimer--;

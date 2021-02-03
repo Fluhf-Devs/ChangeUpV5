@@ -16,7 +16,7 @@ using namespace std;
 bool isSkills = false;
 
 // Where is the starting position? (left or right)
-string startingPosition = "right";
+string startingPosition = "left";
 
 // how many goals should it score?
 int goals = 2;

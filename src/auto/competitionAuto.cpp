@@ -25,14 +25,14 @@ void competitionMainAuto() {
     // turn 90 degrees
     Drivetrain.turnFor(dir1, 90, degrees);
     // drive forward for 36 inches
-    Drivetrain.driveFor(forward, 31, inches);
+    Drivetrain.driveFor(forward, 25, inches);
     // turn left 90 degrees
     Drivetrain.turnFor(dir1, 90, degrees);
     // wait 100 msec
     wait(100, msec);
     // drive forward to goal
     Drivetrain.drive(forward);
-    waitUntil(Accel2GB.acceleration() > .2);
+    wait(700, msec);
     Drivetrain.stop();
     leftUpwards.spin(reverse, 600, rpm);
     rightUpwards.spin(reverse, 600, rpm);
@@ -46,15 +46,15 @@ void competitionMainAuto() {
     // wait 100 mec
     wait(100, msec);
     // rturn left 80 degrees
-    Drivetrain.turnFor(dir1, 80, degrees);
+    Drivetrain.turnFor(dir1, 90, degrees);
     // wait 100
     wait(100, msec);
     // drive forward 36 inches
-    Drivetrain.driveFor(forward, 44, inches);
+    Drivetrain.driveFor(forward, 41, inches);
     // wait 100 msec
     wait(100, msec);
     // turn right 45 degrees
-    Drivetrain.turnFor(dir2, 35, degrees);
+    Drivetrain.turnFor(dir2, 45, degrees);
     // wait 100 msec
     wait(100, msec);
     // spin the intakes and outakes
@@ -66,6 +66,7 @@ void competitionMainAuto() {
     Drivetrain.setDriveVelocity(100, percent);
     leftArmMotor.stop();
     rightArmMotor.stop();
+    wait(100, msec);
     leftUpwards.spin(reverse, 600, rpm);
     rightUpwards.spin(reverse, 600, rpm);
 
@@ -88,7 +89,7 @@ void competitionMainAuto() {
     leftUpwards.spin(reverse, 600, rpm);
     rightUpwards.spin(reverse, 600, rpm);
     // detect collision, then wait 500 msec, then stop
-    waitUntil(Accel2GB.acceleration() > .2 );
+    waitUntil(Accel2GB.acceleration() > 2 );
     Drivetrain.stop();
     wait(500, msec);
     leftUpwards.stop();
