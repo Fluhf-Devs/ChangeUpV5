@@ -18,7 +18,7 @@ void competitionMainAuto() {
   // set drivetrain velocity to 50% for accurate disctance
   Drivetrain.setDriveVelocity(50, percent);
 
-  // checks if it should score 1 or 2 goals
+  // checks if it should score 1 or 2 or 3 goals
   if (goals == 2) {
     Drivetrain.driveFor(12, inches);
     // turn 90 degrees
@@ -171,7 +171,7 @@ void competitionMainAuto() {
     leftArmMotor.stop();
     rightArmMotor.stop();
     // turn so you are facing the side goal
-    Drivetrain.turnFor(dir2, 15, degrees);
+    Drivetrain.turnFor(dir2, 12.5, degrees);
     // drive forward until the limit switch is triggeed
     Drivetrain.drive(forward);
     leftArmMotor.spin(forward, 600, rpm);
