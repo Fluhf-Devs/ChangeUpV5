@@ -17,11 +17,10 @@ void competitionMainAuto() {
   customTimer = 15;
   // set drivetrain velocity to 50% for accurate disctance
   Drivetrain.setDriveVelocity(50, percent);
-  // drive forward 12 inches
-  Drivetrain.driveFor(12, inches);
 
   // checks if it should score 1 or 2 goals
   if (goals == 2) {
+    Drivetrain.driveFor(12, inches);
     // turn 90 degrees
     Drivetrain.turnFor(dir1, 90, degrees);
     // drive forward for 36 inches
@@ -71,6 +70,7 @@ void competitionMainAuto() {
     rightUpwards.spin(reverse, 600, rpm);
 
   } else if (goals == 1) {
+    Drivetrain.driveFor(12, inches);
     // turn to outer goal
     Drivetrain.turnFor(dir2, 90, degrees);
     // drive forward 20 inches
@@ -95,5 +95,102 @@ void competitionMainAuto() {
     leftUpwards.stop();
     rightUpwards.stop();
 
+  } else if (goals == 3) {
+    // currently start s
+    // release hood and score ball into center by yeeting it
+    rightArmMotor.spin(reverse, 600, rpm);
+    wait(200, msec);
+    rightArmMotor.stop();
+    // drive forward 6 inches
+    Drivetrain.setDriveVelocity(100, percent);
+    // wait 200 msec
+    wait(200, msec);
+    // set drivetrain velocity back to 50 percent
+    Drivetrain.setDriveVelocity(50, percent);
+    // spin 180 degrees 
+    Drivetrain.turnFor(dir1, 180, degrees);
+    // drive forward for 500 msec
+    Drivetrain.drive(forward);
+    wait(500, msec);
+    Drivetrain.stop();
+    // take out the red ball
+    leftArmMotor.spin(forward, 600, rpm);
+    rightArmMotor.spin(forward, 600, rpm);
+    wait(700, msec);
+    Drivetrain.driveFor(reverse, 4, inches);
+    waitUntil(LimitSwitchIntake.pressing());
+    // get the ball into the outake
+    leftUpwards.spin(reverse, 200, rpm);
+    rightUpwards.spin(reverse, 200, rpm);
+    // wait 200 msec
+    wait(200, msec);
+    // stop everything
+    leftArmMotor.stop();
+    rightArmMotor.stop();
+    leftUpwards.stop();
+    rightUpwards.stop();
+    // turn 180 degrees
+    Drivetrain.turnFor(dir1, 180, degrees);
+    // drive forward until the limit switch clicks
+    leftArmMotor.spin(forward, 600, rpm);
+    rightArmMotor.spin(forward, 600, rpm);
+    Drivetrain.drive(forward);
+    waitUntil(LimitSwitchIntake.pressing());
+    // get the ball into the outake
+    leftUpwards.spin(reverse, 200, rpm);
+    rightUpwards.spin(reverse, 200, rpm);
+    // wait 200 msec
+    wait(200, msec);
+    // stop everything
+    Drivetrain.stop();
+    rightArmMotor.stop();
+    leftArmMotor.stop();
+    leftUpwards.stop();
+    rightUpwards.stop();
+    // yeet the red ball into the center goal
+    leftUpwards.spin(reverse, 600, rpm);
+    rightUpwards.spin(reverse, 600, rpm);
+    wait(400, msec);
+    // stop the outakes
+    leftUpwards.stop();
+    rightUpwards.stop();
+    // reverse 14 inches
+    Drivetrain.driveFor(reverse, 14, inches);
+    // wait 100 msec
+    wait(100, msec);
+    // turn 170 degrees
+    Drivetrain.turnFor(dir1, 170, degrees);
+    // slowly push the blue ball out
+    leftUpwards.spin(forward, 600, rpm);
+    rightUpwards.spin(forward, 600, rpm);
+    leftArmMotor.spin(reverse, 200, rpm);
+    rightArmMotor.spin(reverse, 200, rpm);
+    wait(500, msec);
+    leftUpwards.stop();
+    rightUpwards.stop();
+    leftArmMotor.stop();
+    rightArmMotor.stop();
+    // turn so you are facing the side goal
+    Drivetrain.turnFor(dir2, 15, degrees);
+    // drive forward until the limit switch is triggeed
+    Drivetrain.drive(forward);
+    leftArmMotor.spin(forward, 600, rpm);
+    rightArmMotor.spin(forward, 600, rpm);
+    waitUntil(LimitSwitchIntake.pressing());
+    Drivetrain.stop();
+    // get the ball into the intake
+    leftUpwards.spin(reverse, 200, rpm);
+    rightUpwards.spin(reverse, 200, rpm);
+    wait(200, msec);
+    leftUpwards.stop();
+    rightUpwards.stop();
+    leftArmMotor.stop();
+    rightArmMotor.stop();
+    // wait 100 msec
+    wait(100, msec);
+    // stop the drivetrain and yeet the ball into the goal
+    Drivetrain.stop();
+    rightUpwards.spin(reverse, 600, rpm);
+    leftUpwards.spin(reverse, 600, rpm);
   }
 }
