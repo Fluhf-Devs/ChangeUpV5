@@ -12,6 +12,14 @@
 
 int customTimer = 0;
 
+int controllerShake() {
+  while(customTimer == 16) {
+    controllerShake();
+  }
+  return 0;
+  this_thread::sleep_for(500);
+}
+
 int brainScreen() {
   // draw boxes here so we dont waste cpu resources
   Brain.Screen.setPenColor(white);
@@ -24,6 +32,7 @@ int brainScreen() {
   Brain.Screen.print("10012W");
   Brain.Screen.setPenColor(white);
   Controller1.Screen.newLine();
+  thread timeWarning = thread(controllerShake);
 
   
   for(;;) {
