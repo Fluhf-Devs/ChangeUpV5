@@ -17,6 +17,7 @@ void competitionMainAuto() {
   customTimer = 15;
   // set drivetrain velocity to 50% for accurate disctance
   Drivetrain.setDriveVelocity(50, percent);
+  thread releaseAHood = thread(releaseHood);
 
   // checks if it should score 1 or 2 or 3 goals
   if (goals == 2) {
@@ -57,8 +58,8 @@ void competitionMainAuto() {
     // wait 100 msec
     wait(100, msec);
     // spin the intakes and outakes
-    rightArmMotor.spin(forward, 600, rpm);
-    leftArmMotor.spin(forward, 600, rpm);
+    rightArmMotor.spin(forward, 200, rpm);
+    leftArmMotor.spin(forward, 200, rpm);
     Drivetrain.setDriveVelocity(30, percent);
     Drivetrain.drive(forward);
     waitUntil(LimitSwitchIntake.pressing());
@@ -78,8 +79,8 @@ void competitionMainAuto() {
     // turn 45 degrees
     Drivetrain.turnFor(dir2, 45, degrees);
     // spin the intakes and outakes
-    rightArmMotor.spin(forward, 600, rpm);
-    leftArmMotor.spin(forward, 600, rpm);
+    rightArmMotor.spin(forward, 200, rpm);
+    leftArmMotor.spin(forward, 200, rpm);
     Drivetrain.setDriveVelocity(30, percent);
     Drivetrain.drive(forward);
     waitUntil(LimitSwitchIntake.pressing());
@@ -94,6 +95,12 @@ void competitionMainAuto() {
     wait(500, msec);
     leftUpwards.stop();
     rightUpwards.stop();
+
+
+
+////////////////////////////////////////////////////////////////////////
+// DO NOT USE 3 GOALS IT DOES NOT WORK WITH CURRENT ROBOT
+///////////////////////////////////////////////////////////////////////
 
   } else if (goals == 3) {
     // currently start s
@@ -114,8 +121,8 @@ void competitionMainAuto() {
     wait(500, msec);
     Drivetrain.stop();
     // take out the red ball
-    leftArmMotor.spin(forward, 600, rpm);
-    rightArmMotor.spin(forward, 600, rpm);
+    leftArmMotor.spin(forward, 200, rpm);
+    rightArmMotor.spin(forward, 200, rpm);
     wait(700, msec);
     Drivetrain.driveFor(reverse, 4, inches);
     waitUntil(LimitSwitchIntake.pressing());
@@ -132,8 +139,8 @@ void competitionMainAuto() {
     // turn 180 degrees
     Drivetrain.turnFor(dir1, 180, degrees);
     // drive forward until the limit switch clicks
-    leftArmMotor.spin(forward, 600, rpm);
-    rightArmMotor.spin(forward, 600, rpm);
+    leftArmMotor.spin(forward, 200, rpm);
+    rightArmMotor.spin(forward, 200, rpm);
     Drivetrain.drive(forward);
     waitUntil(LimitSwitchIntake.pressing());
     // get the ball into the outake
@@ -174,8 +181,8 @@ void competitionMainAuto() {
     Drivetrain.turnFor(dir2, 12.5, degrees);
     // drive forward until the limit switch is triggeed
     Drivetrain.drive(forward);
-    leftArmMotor.spin(forward, 600, rpm);
-    rightArmMotor.spin(forward, 600, rpm);
+    leftArmMotor.spin(forward, 200, rpm);
+    rightArmMotor.spin(forward, 200, rpm);
     waitUntil(LimitSwitchIntake.pressing());
     Drivetrain.stop();
     // get the ball into the intake

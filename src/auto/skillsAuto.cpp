@@ -66,3 +66,7 @@ void skillsMainAuto() {
   wait(900, msec);
   Drivetrain.stop();
 }
+
+void preAuton() {
+  
+}

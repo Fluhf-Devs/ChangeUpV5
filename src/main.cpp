@@ -101,6 +101,7 @@ int main() {
   
   // enable brain screen
   thread autobrainScreenThread = thread(brainScreen);
+
   // read config file
   configWork();
 

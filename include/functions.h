@@ -25,3 +25,5 @@ void usercontrol();
 void configWork();
 extern int customTimer;
 void preAuton();
+extern bool activateHood;
+int releaseHood();
