@@ -31,7 +31,6 @@ int brainScreen() {
   Brain.Screen.setPenColor(green);
   Brain.Screen.print("10012W");
   Brain.Screen.setPenColor(white);
-  Controller1.Screen.newLine();
   thread timeWarning = thread(controllerShake);
 
   
@@ -43,13 +42,11 @@ int brainScreen() {
     Brain.Screen.printAt(20, 150, "Battery:");
     Brain.Screen.printAt(20, 200, "%d percent", Brain.Battery.capacity());
     Brain.Screen.printAt(250, 175, "Time: %d ", customTimer);
-    Controller1.Screen.print(customTimer);
     // sleep 1000 msecs
     this_thread::sleep_for(1000);
     // clear the line
     Brain.Screen.clearLine(20, 200);
     Brain.Screen.clearLine(250, 175);
-    Controller1.Screen.clearLine();
     // post decrement auto Timer
     if (customTimer > 0) {
       customTimer--;

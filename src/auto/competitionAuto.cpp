@@ -23,10 +23,12 @@ void competitionMainAuto() {
   if (goals == 2) {
     Drivetrain.driveFor(12, inches);
     // turn 90 degrees
+    wait(100, msec);
     Drivetrain.turnFor(dir1, 90, degrees);
     // drive forward for 36 inches
     Drivetrain.driveFor(forward, 25, inches);
     // turn left 90 degrees
+    wait(100, msec);
     Drivetrain.turnFor(dir1, 90, degrees);
     // wait 100 msec
     wait(100, msec);
@@ -40,6 +42,7 @@ void competitionMainAuto() {
     leftUpwards.stop();
     rightUpwards.stop();
     // reverse 11 inches
+    wait(150, msec);
     Drivetrain.setDriveVelocity(50, percent);
     Drivetrain.driveFor(reverse, 11, inches);
     Drivetrain.setDriveVelocity(75, percent);
@@ -48,7 +51,7 @@ void competitionMainAuto() {
     // rturn left 80 degrees
     Drivetrain.turnFor(dir1, 90, degrees);
     // wait 100
-    wait(100, msec);
+    wait(150, msec);
     // drive forward 36 inches
     Drivetrain.driveFor(forward, 41, inches);
     // wait 100 msec
