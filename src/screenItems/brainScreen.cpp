@@ -12,12 +12,8 @@
 
 int customTimer = 0;
 
-int controllerShake() {
-  while(customTimer == 16) {
-    controllerShake();
-  }
-  return 0;
-  this_thread::sleep_for(500);
+void controllerShake() {
+  Controller1.rumble("---");
 }
 
 int brainScreen() {
@@ -31,7 +27,6 @@ int brainScreen() {
   Brain.Screen.setPenColor(green);
   Brain.Screen.print("10012W");
   Brain.Screen.setPenColor(white);
-  thread timeWarning = thread(controllerShake);
 
   
   for(;;) {
@@ -46,7 +41,11 @@ int brainScreen() {
     // clear the line
     Brain.Screen.clearLine(20, 200);
     Brain.Screen.clearLine(250, 175);
-    // post decrement auto Timer
+    // rumble to signal end of match coming
+    if(customTimer == 16) {
+      controllerShake();
+    }
+    // decrement custom timer
     if (customTimer > 0) {
       customTimer--;
     }

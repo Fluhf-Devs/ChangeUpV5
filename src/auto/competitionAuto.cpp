@@ -199,17 +199,23 @@ void competitionMainAuto() {
 
 
 
+////////////////////////////////////////////////////////////////////////////////
+// Special auto for partnership with 1011S
+///////////////////////////////////////////////////////////////////////////////
+
+
+
+
   }else if (goals == 1011) {
     Drivetrain.driveFor(forward, 10, inches);
     wait(100, msec);
     Drivetrain.turnFor(left, 90, degrees);
     wait(100, msec);
-    Drivetrain.driveFor(14, inches);
+    Drivetrain.driveFor(forward, 14, inches);
     wait(100, msec);
     Drivetrain.turnFor(left, 45, degrees);
     leftArmMotor.spin(forward, 200, rpm);
     rightArmMotor.spin(forward, 200, rpm);
-    wait(100, msec);
     Drivetrain.drive(forward);
     wait(1000, msec);
     Drivetrain.stop();
