@@ -16,7 +16,7 @@ int releaseHood() {
   while(activateHood == true) {
     rightArmMotor.spin(reverse, 200, rpm);
     leftArmMotor.spin(reverse, 200, rpm);
-    wait(200, msec);
+    wait(300, msec);
     leftArmMotor.stop();
     rightArmMotor.stop();
     leftUpwards.spin(forward, 600, rpm);

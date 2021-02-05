@@ -27,3 +27,5 @@ extern int customTimer;
 void preAuton();
 extern bool activateHood;
 int releaseHood();
+void centerSpecial();
+void hoodtest();

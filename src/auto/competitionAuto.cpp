@@ -28,10 +28,8 @@ void competitionMainAuto() {
     // drive forward for 36 inches
     Drivetrain.driveFor(forward, 25, inches);
     // turn left 90 degrees
-    wait(100, msec);
     Drivetrain.turnFor(dir1, 90, degrees);
     // wait 100 msec
-    wait(100, msec);
     // drive forward to goal
     Drivetrain.drive(forward);
     wait(700, msec);
@@ -47,19 +45,15 @@ void competitionMainAuto() {
     Drivetrain.driveFor(reverse, 11, inches);
     Drivetrain.setDriveVelocity(75, percent);
     // wait 100 mec
-    wait(100, msec);
     // rturn left 80 degrees
     Drivetrain.turnFor(dir1, 90, degrees);
     // wait 100
     wait(150, msec);
     // drive forward 36 inches
     Drivetrain.driveFor(forward, 41, inches);
-    // wait 100 msec
-    wait(100, msec);
     // turn right 45 degrees
     Drivetrain.turnFor(dir2, 45, degrees);
     // wait 100 msec
-    wait(100, msec);
     // spin the intakes and outakes
     rightArmMotor.spin(forward, 200, rpm);
     leftArmMotor.spin(forward, 200, rpm);
@@ -202,5 +196,76 @@ void competitionMainAuto() {
     Drivetrain.stop();
     rightUpwards.spin(reverse, 600, rpm);
     leftUpwards.spin(reverse, 600, rpm);
+
+
+
+  }else if (goals == 1011) {
+    Drivetrain.driveFor(forward, 10, inches);
+    wait(100, msec);
+    Drivetrain.turnFor(left, 90, degrees);
+    wait(100, msec);
+    Drivetrain.driveFor(14, inches);
+    wait(100, msec);
+    Drivetrain.turnFor(left, 45, degrees);
+    leftArmMotor.spin(forward, 200, rpm);
+    rightArmMotor.spin(forward, 200, rpm);
+    wait(100, msec);
+    Drivetrain.drive(forward);
+    wait(1000, msec);
+    Drivetrain.stop();
+    rightArmMotor.stop();
+    leftArmMotor.stop();
+
+
+
+
+    leftUpwards.spin(reverse, 600, rpm);
+    rightUpwards.spin(reverse, 600, rpm);
+
+
+    wait(300, msec);
+    Drivetrain.stop();
+    leftUpwards.stop();
+    rightUpwards.stop();
+    wait(100, msec);
+    leftArmMotor.spin(forward, 200, rpm);
+    rightArmMotor.spin(forward, 200, rpm);
+    wait(500, msec);
+    leftUpwards.spin(reverse, 600, rpm);
+    rightUpwards.spin(reverse, 600, rpm);
+    wait(200, msec);
+    leftUpwards.stop();
+    rightUpwards.stop();
+    leftArmMotor.stop();
+    rightArmMotor.stop();
+
+    Drivetrain.driveFor(reverse, 30, inches);
+    wait(100, msec);
+    Drivetrain.turnFor(right, 135, degrees);
+    wait(100, msec);
+    leftArmMotor.spin(forward, 200, rpm);
+    rightArmMotor.spin(forward, 200, rpm);
+    Drivetrain.driveFor(forward, 40, inches);
+    waitUntil(LimitSwitchIntake.pressing());
+    leftArmMotor.stop();
+    rightArmMotor.stop();
+    Drivetrain.driveFor(reverse, 30, inches);
+    Drivetrain.turnFor(right, 90, degrees);
+    wait(100, msec);
+    Drivetrain.driveFor(forward, 40, inches);
+    wait(100, msec);
+    Drivetrain.turnFor(left, 90, degrees);
+    leftArmMotor.spin(forward, 200, rpm);
+    rightArmMotor.spin(forward, 200, rpm);
+    Drivetrain.driveFor(forward, 14, inches);
+    waitUntil(LimitSwitchIntake.pressing());
+    leftArmMotor.stop();
+    rightArmMotor.stop();
+    leftUpwards.spin(reverse, 600, rpm);
+    rightUpwards.spin(reverse, 600, rpm);
+    wait(300, msec);
+    leftUpwards.stop();
+    rightUpwards.stop();
+    Drivetrain.driveFor(reverse, 14, inches);
   }
 }

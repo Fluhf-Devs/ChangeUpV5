@@ -38,7 +38,6 @@ int brainScreen() {
     Brain.Screen.setFont(monoL);
     
     // display text in the boxes
-    Brain.Screen.print(Accel2GB.acceleration());
     Brain.Screen.printAt(20, 150, "Battery:");
     Brain.Screen.printAt(20, 200, "%d percent", Brain.Battery.capacity());
     Brain.Screen.printAt(250, 175, "Time: %d ", customTimer);
