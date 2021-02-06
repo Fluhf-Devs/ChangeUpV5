@@ -14,14 +14,14 @@ bool activateHood = true;
 
 int releaseHood() {
   while(activateHood == true) {
-    rightArmMotor.spin(reverse, 200, rpm);
-    leftArmMotor.spin(reverse, 200, rpm);
+    rightArmMotor.spin(reverse, 100, rpm);
+    leftArmMotor.spin(reverse, 100, rpm);
     wait(300, msec);
     leftArmMotor.stop();
     rightArmMotor.stop();
     leftUpwards.spin(forward, 600, rpm);
     rightUpwards.spin(forward, 600, rpm);
-    wait(200, msec);
+    wait(300, msec);
     leftUpwards.stop();
     rightUpwards.stop();
     activateHood = false;

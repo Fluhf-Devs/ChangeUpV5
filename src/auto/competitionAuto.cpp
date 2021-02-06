@@ -40,15 +40,12 @@ void competitionMainAuto() {
     leftUpwards.stop();
     rightUpwards.stop();
     // reverse 11 inches
-    wait(150, msec);
+    wait(100, msec);
     Drivetrain.setDriveVelocity(50, percent);
     Drivetrain.driveFor(reverse, 11, inches);
     Drivetrain.setDriveVelocity(75, percent);
-    // wait 100 mec
-    // rturn left 80 degrees
+    // rturn left 90 degrees
     Drivetrain.turnFor(dir1, 90, degrees);
-    // wait 100
-    wait(150, msec);
     // drive forward 36 inches
     Drivetrain.driveFor(forward, 41, inches);
     // turn right 45 degrees
@@ -59,7 +56,7 @@ void competitionMainAuto() {
     leftArmMotor.spin(forward, 200, rpm);
     Drivetrain.setDriveVelocity(30, percent);
     Drivetrain.drive(forward);
-    waitUntil(LimitSwitchIntake.pressing());
+    wait(2000, msec);
     Drivetrain.setDriveVelocity(100, percent);
     leftArmMotor.stop();
     rightArmMotor.stop();
@@ -72,7 +69,7 @@ void competitionMainAuto() {
     // turn to outer goal
     Drivetrain.turnFor(dir2, 90, degrees);
     // drive forward 20 inches
-    Drivetrain.driveFor(forward, 20, inches);
+    Drivetrain.driveFor(forward, 16, inches);
     // turn 45 degrees
     Drivetrain.turnFor(dir2, 45, degrees);
     // spin the intakes and outakes
@@ -218,11 +215,11 @@ void competitionMainAuto() {
     rightArmMotor.spin(forward, 200, rpm);
     Drivetrain.setDriveVelocity(30, percent);
     Drivetrain.drive(forward);
-    waitUntil(LimitSwitchIntake.pressing());
+    wait(1500, msec);
     Drivetrain.setDriveVelocity(100, percent);
     leftUpwards.spin(reverse, 600, rpm);
     rightUpwards.spin(reverse, 600, rpm);
-    wait(300, msec);
+    wait(500, msec);
     leftUpwards.stop();
     rightUpwards.stop();
     Drivetrain.stop();
@@ -233,7 +230,7 @@ void competitionMainAuto() {
 
 
 
-    Drivetrain.driveFor(reverse, 40, inches);
+    Drivetrain.driveFor(reverse, 18, inches);
     if (LimitSwitchIntake.pressing()) {
       leftUpwards.spin(reverse, 200, rpm);
       rightUpwards.spin(reverse, 200, rpm);
@@ -248,7 +245,7 @@ void competitionMainAuto() {
 
     leftArmMotor.spin(forward, 200, rpm);
     rightArmMotor.spin(forward, 200, rpm);
-    Drivetrain.driveFor(forward, 14, inches);
+    Drivetrain.driveFor(forward, 28, inches);
     waitUntil(LimitSwitchIntake.pressing());
     leftArmMotor.stop();
     rightArmMotor.stop();
