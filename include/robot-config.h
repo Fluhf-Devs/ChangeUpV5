@@ -8,6 +8,10 @@ extern motor leftArmMotor;
 extern motor rightArmMotor;
 extern motor leftUpwards;
 extern motor rightUpwards;
+extern motor leftMotorA;
+extern motor leftMotorB;
+extern motor rightMotorA;
+extern motor rightMotorB;
 extern drivetrain Drivetrain;
 extern limit LimitSwitchIntake;
 
