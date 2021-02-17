@@ -29,3 +29,5 @@ extern bool activateHood;
 int releaseHood();
 void centerSpecial();
 void hoodtest();
+int drivePID();
+extern bool enableDrivePID;

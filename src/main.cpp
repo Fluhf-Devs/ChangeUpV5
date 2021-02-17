@@ -92,6 +92,8 @@ void usercontrol() {
   Controller1.ButtonRight.pressed(whenControllerButtonRightPressed);
   Controller1.ButtonDown.pressed(whenControllerButtonDownPressed);
   Controller1.ButtonLeft.pressed(whenControllerButtonLeftPressed);
+  // disable drive PID
+  enableDrivePID = false;
 }
 
 int main() {

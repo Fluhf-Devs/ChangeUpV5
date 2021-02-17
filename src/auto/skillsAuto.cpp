@@ -13,6 +13,8 @@
 /* skills autonomous code */
 
 void skillsMainAuto() {
+  // activate PID
+  vex::task drivetrainPID(drivePID);
   // set timer for brain screen
   customTimer = 60;
   // wheelbase and track width test
