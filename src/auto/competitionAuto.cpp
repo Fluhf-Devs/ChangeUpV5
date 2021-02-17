@@ -56,13 +56,16 @@ void competitionMainAuto() {
     leftArmMotor.spin(forward, 200, rpm);
     Drivetrain.setDriveVelocity(30, percent);
     Drivetrain.drive(forward);
-    wait(2000, msec);
+    wait(2200, msec);
     Drivetrain.setDriveVelocity(100, percent);
     leftArmMotor.stop();
     rightArmMotor.stop();
     wait(100, msec);
     leftUpwards.spin(reverse, 600, rpm);
     rightUpwards.spin(reverse, 600, rpm);
+    wait(700, msec);
+    Drivetrain.setDriveVelocity(100, percent);
+    Drivetrain.drive(reverse);
 
   } else if (goals == 1) {
     Drivetrain.driveFor(12, inches);
@@ -84,7 +87,7 @@ void competitionMainAuto() {
     leftUpwards.spin(reverse, 600, rpm);
     rightUpwards.spin(reverse, 600, rpm);
     // detect collision, then wait 500 msec, then stop
-    waitUntil(Accel2GB.acceleration() > 2 );
+    wait(2, sec);
     Drivetrain.stop();
     wait(500, msec);
     leftUpwards.stop();

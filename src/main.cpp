@@ -8,6 +8,17 @@
 // rightUpwards         motor         19              
 // Drivetrain           drivetrain    2, 11, 12, 17   
 // LimitSwitchIntake    limit         A               
+// ---- END VEXCODE CONFIGURED DEVICES ----
+// ---- START VEXCODE CONFIGURED DEVICES ----
+// Robot Configuration:
+// [Name]               [Type]        [Port(s)]
+// Controller1          controller                    
+// leftArmMotor         motor         10              
+// rightArmMotor        motor         18              
+// leftUpwards          motor         16              
+// rightUpwards         motor         19              
+// Drivetrain           drivetrain    2, 11, 12, 17   
+// LimitSwitchIntake    limit         A               
 // Accel2GB             accelerometer B               
 // ---- END VEXCODE CONFIGURED DEVICES ----
 
