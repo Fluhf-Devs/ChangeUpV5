@@ -109,10 +109,13 @@ int main() {
   // call the pre autonomous
   preAuton();
 
+
   // Set the intake and outake motors stopping mode
   leftUpwards.setStopping(coast);
   rightUpwards.setStopping(coast);
   leftArmMotor.setStopping(coast);
   rightArmMotor.setStopping(coast);
   Drivetrain.setStopping(coast);
+
+  
 }

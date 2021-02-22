@@ -31,3 +31,7 @@ void centerSpecial();
 void hoodtest();
 int drivePID();
 extern bool enableDrivePID;
+extern int desiredValue;
+extern int desiredTurnValue;
+extern bool resetDriveSensors;
+void tippingTest();

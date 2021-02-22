@@ -34,6 +34,13 @@ int desiredValue = 200; // motor ticks I think, bot 200rpm about 900 ticks / rev
 int desiredTurnValue = 0;
 
 
+
+
+bool resetDriveSensors = false;
+
+
+
+
 // variables modified for use
 bool enableDrivePID = true;
 
@@ -42,6 +49,17 @@ bool enableDrivePID = true;
 int drivePID() {
 
   while(enableDrivePID == true) {
+
+
+    if(resetDriveSensors) {
+      resetDriveSensors = false;
+
+      leftMotorA.setPosition(0, degrees);
+      leftMotorB.setPosition(0, degrees);
+      rightMotorA.setPosition(0, degrees);
+      rightMotorB.setPosition(0, degrees);
+
+    }
 
     // get the position of the motors
     int leftMotorAPosition = leftMotorA.position(degrees);

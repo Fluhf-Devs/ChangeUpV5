@@ -9,7 +9,7 @@ The Code is now written in C++. The program can be read by other IDE's (but the 
 - [X] Convert to C++
 - [X] Driver Control Code
 - [X] Autonoumous Code
-- [ ] self-coded device constructors
-- [ ] Drivetrain which allows access to individual motors
-- [ ] PID
+- [X] self-coded device constructors
+- [X] Drivetrain which allows access to individual motors
+- [X] PID
 - [ ] Controller screen with custom coloums

@@ -9,15 +9,15 @@ brain  Brain;
 
 // VEXcode device constructors
 controller Controller1 = controller(primary);
-motor leftArmMotor = motor(PORT10, ratio18_1, false);
-motor rightArmMotor = motor(PORT18, ratio18_1, true);
-motor leftUpwards = motor(PORT16, ratio6_1, false);
-motor rightUpwards = motor(PORT19, ratio6_1, true);
-motor leftMotorA = motor(PORT2, ratio18_1, false);
-motor leftMotorB = motor(PORT11, ratio18_1, false);
+motor leftArmMotor = motor(PORT20, ratio18_1, false);
+motor rightArmMotor = motor(PORT20, ratio18_1,                                                                true);
+motor leftUpwards = motor(PORT4, ratio6_1, false);
+motor rightUpwards = motor(PORT5, ratio6_1, false);
+motor leftMotorA = motor(PORT21, ratio18_1, false);
+motor leftMotorB = motor(PORT9, ratio18_1, false);
 motor_group LeftDriveSmart = motor_group(leftMotorA, leftMotorB);
-motor rightMotorA = motor(PORT12, ratio18_1, true);
-motor rightMotorB = motor(PORT17, ratio18_1, true);
+motor rightMotorA = motor(PORT1, ratio18_1, true);
+motor rightMotorB = motor(PORT8, ratio18_1, true);
 motor_group RightDriveSmart = motor_group(rightMotorA, rightMotorB);
 drivetrain Drivetrain = drivetrain(LeftDriveSmart, RightDriveSmart, 219.44, 276.86, 7.112, mm, 1);
 limit LimitSwitchIntake = limit(Brain.ThreeWirePort.A);
