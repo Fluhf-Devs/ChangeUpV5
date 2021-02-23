@@ -14,6 +14,12 @@ extern motor rightMotorA;
 extern motor rightMotorB;
 extern drivetrain Drivetrain;
 extern limit LimitSwitchIntake;
+extern motor_group LeftDriveSmart;
+extern motor_group RightDriveSmart;
+
+// Drivetrain controller variables
+extern int drivetrainLeftSideSpeed;
+extern int drivetrainRightSideSpeed;
 
 /**
  * Used to initialize code/tasks/devices added using tools in VEXcode Pro.
