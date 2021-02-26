@@ -1,11 +1,6 @@
 // ---- START VEXCODE CONFIGURED DEVICES ----
 // Robot Configuration:
 // [Name]               [Type]        [Port(s)]
-// BumperB              bumper        B               
-// ---- END VEXCODE CONFIGURED DEVICES ----
-// ---- START VEXCODE CONFIGURED DEVICES ----
-// Robot Configuration:
-// [Name]               [Type]        [Port(s)]
 // Controller1          controller                    
 // leftArmMotor         motor         10              
 // rightArmMotor        motor         18              
@@ -106,8 +101,9 @@ int main() {
   vexcodeInit();
 
   
-  // enable brain screen
+  // enable controllers and brain screen thread
   thread autobrainScreenThread = thread(brainScreen);
+  thread autocontrollerScreenThread = thread(controllerScreen);
 
   // read config file
   configWork();

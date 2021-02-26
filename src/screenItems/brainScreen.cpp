@@ -12,9 +12,7 @@
 
 int customTimer = 0;
 
-void controllerShake() {
-  Controller1.rumble("---");
-}
+double drivetrainTemp = (leftMotorA.temperature() + leftMotorB.temperature() + rightMotorA.temperature() + rightMotorB.temperature()) / 4;
 
 int brainScreen() {
   // draw boxes here so we dont waste cpu resources
