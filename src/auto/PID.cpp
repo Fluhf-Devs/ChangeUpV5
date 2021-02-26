@@ -30,8 +30,12 @@ int turnDerivative; // error - prevError = speed
 int turnTotalError = 0; // totalError = totalError + error
 
 //Autonomous settings
-int desiredValue = 200; // motor ticks I think, bot 200rpm about 900 ticks / rev
-int desiredTurnValue = 0;
+int desiredValue = 0; // motor ticks I think, bot 200rpm about 900 ticks / rev, 
+int desiredTurnValue = 0; // should work same as above
+
+///////////////////////////////////////////////////////////
+///// wheels are 3.25 inches, therefore each revolution the robot will travel 3.25 inches, 900 motor ticks = 3.25 inches forward
+////////////////////////////////////
 
 
 
@@ -62,10 +66,10 @@ int drivePID() {
     }
 
     // get the position of the motors
-    int leftMotorAPosition = leftMotorA.position(degrees);
-    int leftMotorBPosition = leftMotorB.position(degrees);
-    int rightMotorAPosition = rightMotorA.position(degrees);
-    int rightMotorBPosition = rightMotorB.position(degrees);
+    int leftMotorAPosition = leftMotorA.position(vex::rotationUnits::raw);
+    int leftMotorBPosition = leftMotorB.position(vex::rotationUnits::raw);
+    int rightMotorAPosition = rightMotorA.position(vex::rotationUnits::raw);
+    int rightMotorBPosition = rightMotorB.position(vex::rotationUnits::raw);
 
     /////////////////////////////////////////////////////////
     // Lateral Movement PID

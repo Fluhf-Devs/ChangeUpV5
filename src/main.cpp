@@ -1,6 +1,11 @@
 // ---- START VEXCODE CONFIGURED DEVICES ----
 // Robot Configuration:
 // [Name]               [Type]        [Port(s)]
+// BumperB              bumper        B               
+// ---- END VEXCODE CONFIGURED DEVICES ----
+// ---- START VEXCODE CONFIGURED DEVICES ----
+// Robot Configuration:
+// [Name]               [Type]        [Port(s)]
 // Controller1          controller                    
 // leftArmMotor         motor         10              
 // rightArmMotor        motor         18              
@@ -99,6 +104,7 @@ void usercontrol() {
 int main() {
   // Initializing Robot Configuration. DO NOT REMOVE!
   vexcodeInit();
+
   
   // enable brain screen
   thread autobrainScreenThread = thread(brainScreen);
@@ -116,6 +122,7 @@ int main() {
   leftArmMotor.setStopping(coast);
   rightArmMotor.setStopping(coast);
   Drivetrain.setStopping(coast);
+
 
   
 }

@@ -22,7 +22,7 @@ void configWork() {
   
   // now to read the config file!
   if (isSkills == true) {
-    Competition.autonomous(skillsMainAuto);
+    Competition.autonomous(skillsAdvancedAuto);
   } else if (isSkills == false) {
     Competition.autonomous(competitionMainAuto);
   }

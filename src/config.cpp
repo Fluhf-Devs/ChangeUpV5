@@ -13,7 +13,7 @@
 using namespace std;
 
 // should it use skills or competition autonomous?
-bool isSkills = false;
+bool isSkills = true;
 
 // Where is the starting position? (left or right)
 string startingPosition = "right";

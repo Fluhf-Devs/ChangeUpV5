@@ -13,12 +13,18 @@
 /* skills autonomous code */
 
 void skillsMainAuto() {
+
+  Drivetrain.turnFor(360, degrees);
+  wait(100, sec);
+
+
+
+
+
   // activate PID
   vex::task drivetrainPID(drivePID);
   // set timer for brain screen
   customTimer = 60;
-  // wheelbase and track width test
-  Drivetrain.turnFor(360, degrees);
   // spin the outakes
   outakeMove(600, rpm, reverse);
   wait(1000, msec);

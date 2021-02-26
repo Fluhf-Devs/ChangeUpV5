@@ -14,6 +14,8 @@ extern motor rightMotorA;
 extern motor rightMotorB;
 extern drivetrain Drivetrain;
 extern limit LimitSwitchIntake;
+extern bumper BumperB;
+extern bumper BumperC;
 
 /**
  * Used to initialize code/tasks/devices added using tools in VEXcode Pro.
