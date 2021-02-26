@@ -13,6 +13,15 @@
 #include "vex.h"
 #include "functions.h"
 
+// variables
+bool intercept = false;
+
+
+
+void whenController2L2Pressed() {
+  intercept = true;
+}
+
 void whenControllerR1Pressed() {
   intakeMove(200, rpm, forward);
   waitUntil(!Controller1.ButtonR1.pressing());
@@ -28,14 +37,25 @@ void whenControllerR2Pressed() {
 }
 
 void whenControllerL1Pressed() {
-  outakeMove(600, rpm, reverse);
-  waitUntil(!Controller1.ButtonL1.pressing());
-  wait(5, msec);
-  outakeStop();
+  if (intercept == false) {
+    leftArmMotor.spin(forward, 600, rpm);
+    rightArmMotor.spin(forward, 600, rpm);
+    waitUntil(!Controller1.ButtonL1.pressing());
+    wait(5, msec);
+    outakeStop();
+  } else if (intercept == true) {
+    leftArmMotor.spin(reverse, 600, rpm);
+    rightArmMotor.spin(forward, 600, rpm);
+    waitUntil(!Controller1.ButtonL1.pressing());
+    wait(5, msec);
+    outakeStop();
+  }
+
 }
 
 void whenControllerL2Pressed() {
-  outakeMove(400, rpm, forward);
+  leftArmMotor.spin(forward, 600, rpm);
+  rightArmMotor.spin(forward, 600, rpm);
   waitUntil(!Controller1.ButtonL2.pressing());
   wait(5, msec);
   outakeStop();
@@ -92,6 +112,8 @@ void usercontrol() {
   Controller1.ButtonRight.pressed(whenControllerButtonRightPressed);
   Controller1.ButtonDown.pressed(whenControllerButtonDownPressed);
   Controller1.ButtonLeft.pressed(whenControllerButtonLeftPressed);
+  Controller2.ButtonL2.pressed(whenController2L2Pressed);
+  
   // disable drive PID
   enableDrivePID = false;
 }
