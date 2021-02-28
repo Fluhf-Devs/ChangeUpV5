@@ -47,9 +47,19 @@ void skillsAdvancedAuto() {
   customTimer = 60;
   // release the hood
   thread releaseAHood = thread(releaseHood);
+  // activate PID
+  vex::task driveTrainPID(drivePID);
 
 
-  // start autonomous
+  // test stuff
+  resetDriveSensors = true;
+  desiredValue = 3000;
+  desiredTurnValue = 0;
+
+  vex::task::sleep(1000);
+
+  resetDriveSensors = true;
+
   
   
 

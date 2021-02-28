@@ -11,13 +11,13 @@
 #include "functions.h"
 
 // settings
-double kP = 0.0;
+double kP = 0.05;
 double kI = 0.0;
 double kD = 0.0;
 
-double turnKP = 0.0;
+double turnKP = 0.0001;
 double turnKI = 0.0;
-double turnKD = 0.0;
+double turnKD = 0.0001;
 
 int error; // sensorValues - desiredValue = Position
 int prevError = 0; // Position 20 milliseconds ago
@@ -66,10 +66,10 @@ int drivePID() {
     }
 
     // get the position of the motors
-    int leftMotorAPosition = leftMotorA.position(vex::rotationUnits::raw);
-    int leftMotorBPosition = leftMotorB.position(vex::rotationUnits::raw);
-    int rightMotorAPosition = rightMotorA.position(vex::rotationUnits::raw);
-    int rightMotorBPosition = rightMotorB.position(vex::rotationUnits::raw);
+    int leftMotorAPosition = leftMotorA.position(degrees);
+    int leftMotorBPosition = leftMotorB.position(degrees);
+    int rightMotorAPosition = rightMotorA.position(degrees);
+    int rightMotorBPosition = rightMotorB.position(degrees);
 
     /////////////////////////////////////////////////////////
     // Lateral Movement PID
@@ -80,7 +80,7 @@ int drivePID() {
 
 
     // Potential
-    error = averagePosition - desiredValue;
+    error = desiredValue - averagePosition;
 
     // Derivative
     derivative = error - prevError;
@@ -103,7 +103,7 @@ int drivePID() {
 
 
     // Potential
-    turnError = turnDifference - desiredTurnValue;
+    turnError = turnError = desiredTurnValue - turnDifference;
 
     // Derivative
     turnDerivative = turnError - turnPrevError;
@@ -125,7 +125,7 @@ int drivePID() {
 
 
     prevError = error;
-    turnPrevError = prevError;
+    turnPrevError = turnError;
 
     vex::task::sleep(20);
   }

@@ -37,25 +37,14 @@ void whenControllerR2Pressed() {
 }
 
 void whenControllerL1Pressed() {
-  if (intercept == false) {
-    leftArmMotor.spin(forward, 600, rpm);
-    rightArmMotor.spin(forward, 600, rpm);
-    waitUntil(!Controller1.ButtonL1.pressing());
-    wait(5, msec);
-    outakeStop();
-  } else if (intercept == true) {
-    leftArmMotor.spin(reverse, 600, rpm);
-    rightArmMotor.spin(forward, 600, rpm);
-    waitUntil(!Controller1.ButtonL1.pressing());
-    wait(5, msec);
-    outakeStop();
+  outakeMove(600, rpm, reverse);
+  waitUntil(!Controller1.ButtonL1.pressing());
+  wait(5, msec);
+  outakeStop();
   }
 
-}
-
 void whenControllerL2Pressed() {
-  leftArmMotor.spin(forward, 600, rpm);
-  rightArmMotor.spin(forward, 600, rpm);
+  outakeMove(400, rpm, forward);
   waitUntil(!Controller1.ButtonL2.pressing());
   wait(5, msec);
   outakeStop();
