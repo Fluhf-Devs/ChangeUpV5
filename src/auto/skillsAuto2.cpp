@@ -46,19 +46,17 @@ void skillsAdvancedAuto() {
   // set custom timer to 60
   customTimer = 60;
   // release the hood
-  thread releaseAHood = thread(releaseHood);
-  // activate PID
+  vex::thread releaseAHood = thread(releaseHood);
+  // activate PID and slew
+  vex::task slewProtocol = task(slewWorker);
   vex::task driveTrainPID(drivePID);
 
 
   // test stuff
   resetDriveSensors = true;
+  startSlew = true;
   desiredValue = 1200;
   desiredTurnValue = 0;
-
-  vex::task::sleep(100000);
-
-  resetDriveSensors = true;
 
   
   
