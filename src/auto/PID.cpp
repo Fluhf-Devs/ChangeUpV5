@@ -11,7 +11,7 @@
 #include "functions.h"
 
 // settings
-double kP = 0.05;
+double kP = 0.01;
 double kI = 0.0;
 double kD = 0.0;
 
@@ -35,7 +35,7 @@ int desiredTurnValue = 0; // should work same as above
 
 ///////////////////////////////////////////////////////////
 ///// wheels are 3.25 inches, therefore each revolution the robot will travel 3.25 inches, 900 motor ticks = 3.25 inches forward
-////////////////////////////////////
+/////////////////////////////////////
 
 
 
@@ -52,8 +52,7 @@ bool enableDrivePID = true;
 
 int drivePID() {
 
-  while(enableDrivePID == true) {
-
+  while(enableDrivePID) {
 
     if(resetDriveSensors) {
       resetDriveSensors = false;
@@ -77,7 +76,6 @@ int drivePID() {
     
     // get average of the four motors
     int averagePosition = (leftMotorAPosition + leftMotorBPosition + rightMotorAPosition + rightMotorBPosition)/4;
-
 
     // Potential
     error = desiredValue - averagePosition;

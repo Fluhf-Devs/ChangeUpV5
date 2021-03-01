@@ -53,10 +53,10 @@ void skillsAdvancedAuto() {
 
   // test stuff
   resetDriveSensors = true;
-  desiredValue = 3000;
+  desiredValue = 1200;
   desiredTurnValue = 0;
 
-  vex::task::sleep(1000);
+  vex::task::sleep(100000);
 
   resetDriveSensors = true;
 
