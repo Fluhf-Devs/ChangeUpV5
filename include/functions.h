@@ -37,3 +37,5 @@ void skillsAdvancedAuto();
 extern double drivetrainTemp;
 void controllerShake();
 int controllerScreen();
+extern bool startSlew;
+int slewWorker();

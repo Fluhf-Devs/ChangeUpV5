@@ -33,25 +33,23 @@ int turnTotalError = 0; // totalError = totalError + error
 int desiredValue = 0; // motor ticks I think, bot 200rpm about 900 ticks / rev, 
 int desiredTurnValue = 0; // should work same as above
 
-///////////////////////////////////////////////////////////
-///// wheels are 3.25 inches, therefore each revolution the robot will travel 3.25 inches, 900 motor ticks = 3.25 inches forward
-//////////////////////////////////////
+// variables used in slew
+bool startSlew = false;
 
-
-
-
+// variable that is part of stopping the PID
 bool resetDriveSensors = false;
-
-
-
 
 // variables modified for use
 bool enableDrivePID = true;
 
+// variables that have to be created outside thread
+double lateralMotorPower = 0.0;
+double turnMotorPower = 0.0;
+double slew = 0.0;
+
 
 
 int drivePID() {
-
   while(enableDrivePID) {
 
     if(resetDriveSensors) {
@@ -86,9 +84,8 @@ int drivePID() {
     // velocity
     totalError += error;
 
-
-    double lateralMotorPower = error * kP + derivative * kD;
-
+    // calculate motor power
+    lateralMotorPower = error * kP + derivative * kD;
 
 
 
@@ -96,9 +93,10 @@ int drivePID() {
     // Turning Movement PID
     ////////////////////////////////////////////////////////////////////////////////
 
+
+
     // get average of the four motors
     int turnDifference = ((leftMotorAPosition + leftMotorBPosition) - (rightMotorAPosition + rightMotorBPosition))/2;
-
 
     // Potential
     turnError = turnError = desiredTurnValue - turnDifference;
@@ -109,25 +107,75 @@ int drivePID() {
     // velocity
     turnTotalError += turnError;
 
+    // calculate power for turning
+    turnMotorPower = turnError * turnKP + turnDerivative * turnKD;
 
-    double turnMotorPower = turnError * turnKP + turnDerivative * turnKD;
     /////////////////////////////////////////////////////////////////////////////////
 
+
+    // spin the motors
     leftMotorA.spin(forward, lateralMotorPower + turnMotorPower, voltageUnits::volt);
     leftMotorB.spin(forward, lateralMotorPower + turnMotorPower, voltageUnits::volt);
     rightMotorA.spin(forward, lateralMotorPower - turnMotorPower, voltageUnits::volt);
     rightMotorB.spin(forward, lateralMotorPower - turnMotorPower, voltageUnits::volt);
 
 
-
-
-
+    // set errors
     prevError = error;
     turnPrevError = turnError;
 
+    // sleep
     vex::task::sleep(20);
   }
 
 
+  return 0;
+}
+
+int slewWorker() {
+
+  while(startSlew) {
+    slew = (lateralMotorPower / 100) * 5;
+    wait(10, msec);
+    slew = (lateralMotorPower / 100) * 10;
+    wait(10, msec);
+    slew = (lateralMotorPower / 100) * 15;
+    wait(10, msec);
+    slew = (lateralMotorPower / 100) * 20;
+    wait(10, msec);
+    slew = (lateralMotorPower / 100) * 25;
+    wait(10, msec);
+    slew = (lateralMotorPower / 100) * 30;
+    wait(10, msec);
+    slew = (lateralMotorPower / 100) * 35;
+    wait(10, msec);
+    slew = (lateralMotorPower / 100) * 40;
+    wait(10, msec);
+    slew = (lateralMotorPower / 100) * 45;
+    wait(10, msec);
+    slew = (lateralMotorPower / 100) * 50;
+    wait(10, msec);
+    slew = (lateralMotorPower / 100) * 55;
+    wait(10, msec);
+    slew = (lateralMotorPower / 100) * 60;
+    wait(10, msec);
+    slew = (lateralMotorPower / 100) * 65;
+    wait(10, msec);
+    slew = (lateralMotorPower / 100) * 70;
+    wait(10, msec);
+    slew = (lateralMotorPower / 100) * 75;
+    wait(10, msec);
+    slew = (lateralMotorPower / 100) * 80;
+    wait(10, msec);
+    slew = (lateralMotorPower / 100) * 85;
+    wait(10, msec);
+    slew = (lateralMotorPower / 100) * 90;
+    wait(10, msec);
+    slew = (lateralMotorPower / 100) * 95;
+    wait(10, msec);
+    slew = lateralMotorPower;
+    startSlew = false;
+
+  }
   return 0;
 }
