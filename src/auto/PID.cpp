@@ -35,7 +35,7 @@ int desiredTurnValue = 0; // should work same as above
 
 ///////////////////////////////////////////////////////////
 ///// wheels are 3.25 inches, therefore each revolution the robot will travel 3.25 inches, 900 motor ticks = 3.25 inches forward
-/////////////////////////////////////
+//////////////////////////////////////
 
 
 
