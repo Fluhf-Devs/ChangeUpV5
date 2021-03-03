@@ -114,7 +114,7 @@ int main() {
   
   // enable controllers and brain screen thread
   thread autobrainScreenThread = thread(brainScreen);
-  thread autocontrollerScreenThread = thread(controllerScreen);
+  task autocontrollerScreenThread = task(controllerScreen);
 
   // read config file
   configWork();

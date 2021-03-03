@@ -21,14 +21,9 @@ void controllerShake() {
 // main controller screen thread
 
 int controllerScreen() {
-  // clear lines
-  if(firstTime == false) {
-    Controller1.Screen.clearLine();
-  }
-  Controller2.Screen.clearScreen();
+  while (true) {
+      Controller2.Screen.clearScreen();
 
-  // controller 1 screen
-  Controller1.Screen.print(customTimer);
 
   // controller 2 screen
   Controller2.Screen.print(drivetrainTemp);
@@ -42,7 +37,9 @@ int controllerScreen() {
   // make it say that its not the first time
   firstTime = false;
 
-  vex::this_thread::sleep_for(20);
+  }
+  vex::this_thread::sleep_for(1000);
 
   return 0;
+
 }

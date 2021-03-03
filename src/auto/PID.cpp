@@ -11,13 +11,13 @@
 #include "functions.h"
 
 // settings
-double kP = 0.01;
+double kP = 0.09;
 double kI = 0.0;
-double kD = 0.0;
+double kD = 0.09;
 
-double turnKP = 0.0001;
+double turnKP = 0.046;
 double turnKI = 0.0;
-double turnKD = 0.0001;
+double turnKD = 0.05;
 
 int error; // sensorValues - desiredValue = Position
 int prevError = 0; // Position 20 milliseconds ago
@@ -35,6 +35,7 @@ int desiredTurnValue = 0; // should work same as above
 
 // variables used in slew
 bool startSlew = false;
+bool turning = false;
 
 // variable that is part of stopping the PID
 bool resetDriveSensors = false;
@@ -46,6 +47,9 @@ bool enableDrivePID = true;
 double lateralMotorPower = 0.0;
 double turnMotorPower = 0.0;
 double slew = 0.0;
+double turnSlew = 0.0;
+double slewPercent = 0;
+int slewTurnPercent = 0;
 
 
 
@@ -96,10 +100,10 @@ int drivePID() {
 
 
     // get average of the four motors
-    int turnDifference = ((leftMotorAPosition + leftMotorBPosition) - (rightMotorAPosition + rightMotorBPosition))/2;
+    int turnDifference = ((leftMotorAPosition + leftMotorBPosition)/2) - ((rightMotorAPosition + rightMotorBPosition)/2);
 
     // Potential
-    turnError = turnError = desiredTurnValue - turnDifference;
+    turnError = desiredTurnValue - turnDifference;
 
     // Derivative
     turnDerivative = turnError - turnPrevError;
@@ -111,71 +115,45 @@ int drivePID() {
     turnMotorPower = turnError * turnKP + turnDerivative * turnKD;
 
     /////////////////////////////////////////////////////////////////////////////////
+    // slew
+    ////////////////////////////////////
+
+    if(startSlew) {
+      // lateral Slew
+      if (turning == false) {
+          slew = (lateralMotorPower / 100) * slewPercent;
+          if(slewPercent < 100) {
+             slewPercent += 1;
+          }
+      } else if (turning) {
+          slew = (lateralMotorPower / 100) * slewPercent;
+          if(slewPercent < 100) {
+              slewPercent += 1;
+          }
+      }
+    }
 
 
     // spin the motors
-    leftMotorA.spin(forward, lateralMotorPower + turnMotorPower, voltageUnits::volt);
-    leftMotorB.spin(forward, lateralMotorPower + turnMotorPower, voltageUnits::volt);
-    rightMotorA.spin(forward, lateralMotorPower - turnMotorPower, voltageUnits::volt);
-    rightMotorB.spin(forward, lateralMotorPower - turnMotorPower, voltageUnits::volt);
+    leftMotorA.spin(forward, slew + turnSlew, voltageUnits::volt);
+    leftMotorB.spin(forward, slew + turnSlew, voltageUnits::volt);
+    rightMotorA.spin(forward, ((slew - turnSlew)/100) * 96, voltageUnits::volt);
+    rightMotorB.spin(forward, ((slew - turnSlew)/100) * 96, voltageUnits::volt);
 
 
     // set errors
     prevError = error;
     turnPrevError = turnError;
 
+    // test turning logic
+    Brain.Screen.print(turnDifference);
+    Brain.Screen.print(turnError);
+    Brain.Screen.print(desiredTurnValue);
+
     // sleep
     vex::task::sleep(20);
   }
 
 
-  return 0;
-}
-
-int slewWorker() {
-
-  while(startSlew) {
-    slew = (lateralMotorPower / 100) * 5;
-    wait(10, msec);
-    slew = (lateralMotorPower / 100) * 10;
-    wait(10, msec);
-    slew = (lateralMotorPower / 100) * 15;
-    wait(10, msec);
-    slew = (lateralMotorPower / 100) * 20;
-    wait(10, msec);
-    slew = (lateralMotorPower / 100) * 25;
-    wait(10, msec);
-    slew = (lateralMotorPower / 100) * 30;
-    wait(10, msec);
-    slew = (lateralMotorPower / 100) * 35;
-    wait(10, msec);
-    slew = (lateralMotorPower / 100) * 40;
-    wait(10, msec);
-    slew = (lateralMotorPower / 100) * 45;
-    wait(10, msec);
-    slew = (lateralMotorPower / 100) * 50;
-    wait(10, msec);
-    slew = (lateralMotorPower / 100) * 55;
-    wait(10, msec);
-    slew = (lateralMotorPower / 100) * 60;
-    wait(10, msec);
-    slew = (lateralMotorPower / 100) * 65;
-    wait(10, msec);
-    slew = (lateralMotorPower / 100) * 70;
-    wait(10, msec);
-    slew = (lateralMotorPower / 100) * 75;
-    wait(10, msec);
-    slew = (lateralMotorPower / 100) * 80;
-    wait(10, msec);
-    slew = (lateralMotorPower / 100) * 85;
-    wait(10, msec);
-    slew = (lateralMotorPower / 100) * 90;
-    wait(10, msec);
-    slew = (lateralMotorPower / 100) * 95;
-    wait(10, msec);
-    slew = lateralMotorPower;
-    startSlew = false;
-
-  }
   return 0;
 }

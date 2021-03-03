@@ -38,4 +38,4 @@ extern double drivetrainTemp;
 void controllerShake();
 int controllerScreen();
 extern bool startSlew;
-int slewWorker();
+extern bool turning;
