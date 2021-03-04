@@ -46,16 +46,20 @@ void skillsAdvancedAuto() {
   // set custom timer to 60
   customTimer = 60;
   // release the hood
-  vex::thread releaseAHood = thread(releaseHood);
+  //vex::thread releaseAHood = thread(releaseHood);
   // activate PID and slew
   vex::task driveTrainPID(drivePID);
 
 
   // autonomous
+  leftArmMotor.setVelocity(200, rpm);
+  rightArmMotor.setVelocity(200, rpm);
+  leftArmMotor.spin(forward);
+  rightArmMotor.spin(forward);
   startSlew = true;
   resetDriveSensors = true;
-  turning = true;
-  desiredTurnValue = 1200;
+  turning = false;
+  desiredValue = 600;
 
 
   
