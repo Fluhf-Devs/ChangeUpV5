@@ -39,3 +39,6 @@ void controllerShake();
 int controllerScreen();
 extern bool startSlew;
 extern bool turning;
+extern double turnSlew;
+extern double slewTurnPercent;
+extern double turnMotorPower;

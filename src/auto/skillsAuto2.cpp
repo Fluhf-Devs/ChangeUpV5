@@ -43,7 +43,7 @@ to turn 360 degrees, each wheel has to go forward 42.411500823462 inches
 
 
 void skillsAdvancedAuto() {
-/*  // set custom timer to 60
+  // set custom timer to 60
   customTimer = 60;
   // release the hood
   vex::thread releaseAHood = thread(releaseHood);
@@ -51,23 +51,11 @@ void skillsAdvancedAuto() {
   vex::task driveTrainPID(drivePID);
 
 
-  // test stuff
-  resetDriveSensors = true;
+  // autonomous
   startSlew = true;
-  desiredValue = 400;
-  desiredTurnValue = 0;
-
-  vex::task::sleep(3000);
-
-  resetDriveSensors = true;
-  desiredValue = 100000;
-  desiredTurnValue = 0;
-  */
-
   resetDriveSensors = true;
   turning = true;
-  desiredValue = 0;
-  desiredTurnValue = 10000;
+  desiredTurnValue = 1200;
 
 
   
