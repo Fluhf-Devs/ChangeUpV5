@@ -59,7 +59,19 @@ void skillsAdvancedAuto() {
   startSlew = true;
   resetDriveSensors = true;
   turning = false;
-  desiredValue = 600;
+  desiredValue = 800;
+
+  vex::task::sleep(500);
+
+  leftArmMotor.stop();
+  rightArmMotor.stop();
+  resetDriveSensors = true;
+  startSlew = true;
+  turning = true;
+  slewTurnPercent = 0.0;
+  slewPercent = 0.0;
+  desiredValue = 0;
+  desiredTurnValue = 200;
 
 
   

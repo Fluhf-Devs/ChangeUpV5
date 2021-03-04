@@ -42,3 +42,4 @@ extern bool turning;
 extern double turnSlew;
 extern double slewTurnPercent;
 extern double turnMotorPower;
+extern double slewPercent;
