@@ -48,8 +48,8 @@ double lateralMotorPower = 0.0;
 double turnMotorPower = 0.0;
 double slew = 0.0;
 double turnSlew = 0.0;
-double slewPercent = 0;
-int slewTurnPercent = 0;
+double slewPercent = 0.0;
+double slewTurnPercent = 0.0;
 
 
 
@@ -126,9 +126,9 @@ int drivePID() {
              slewPercent += 1;
           }
       } else if (turning) {
-          slew = (lateralMotorPower / 100) * slewPercent;
-          if(slewPercent < 100) {
-              slewPercent += 1;
+          turnSlew = (turnMotorPower / 100) * slewTurnPercent;
+          if(slewTurnPercent < 100) {
+              slewTurnPercent += 1;
           }
       }
     }
@@ -146,9 +146,10 @@ int drivePID() {
     turnPrevError = turnError;
 
     // test turning logic
-    Brain.Screen.print(turnDifference);
-    Brain.Screen.print(turnError);
-    Brain.Screen.print(desiredTurnValue);
+    std::cout << turnSlew << std::endl;
+    std::cout << desiredTurnValue << std::endl;
+    std::cout << turnMotorPower << std::endl;
+    std::cout << slewTurnPercent << std::endl;
 
     // sleep
     vex::task::sleep(20);
