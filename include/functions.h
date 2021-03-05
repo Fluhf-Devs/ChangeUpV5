@@ -54,3 +54,5 @@ void whenControllerButtonUpPressed();
 void whenControllerButtonRightPressed();
 void whenControllerButtonDownPressed();
 void whenControllerButtonLeftPressed();
+extern bool intercept;
+void whenController2ButtonBPressed();

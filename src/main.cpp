@@ -27,6 +27,7 @@ void usercontrol() {
   leftUpwards.stop();
   rightUpwards.stop();
   Drivetrain.stop();
+  
   // callbacks for driver contol functions
   Controller1.ButtonR1.pressed(whenControllerR1Pressed);
   Controller1.ButtonR2.pressed(whenControllerR2Pressed);
@@ -36,6 +37,7 @@ void usercontrol() {
   Controller1.ButtonRight.pressed(whenControllerButtonRightPressed);
   Controller1.ButtonDown.pressed(whenControllerButtonDownPressed);
   Controller1.ButtonLeft.pressed(whenControllerButtonLeftPressed);
+  Controller2.ButtonB.pressed(whenController2ButtonBPressed);
   
   // disable drive PID
   enableDrivePID = false;
