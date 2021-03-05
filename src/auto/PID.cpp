@@ -51,8 +51,6 @@ double turnSlew = 0.0;
 double slewPercent = 0.0;
 double slewTurnPercent = 0.0;
 
-
-
 int drivePID() {
   while(enableDrivePID) {
 
@@ -91,13 +89,9 @@ int drivePID() {
     // calculate motor power
     lateralMotorPower = error * kP + derivative * kD;
 
-
-
     /////////////////////////////////////////////////////////
     // Turning Movement PID
     ////////////////////////////////////////////////////////////////////////////////
-
-
 
     // get average of the four motors
     int turnDifference = ((leftMotorAPosition + leftMotorBPosition)/2) - ((rightMotorAPosition + rightMotorBPosition)/2);
@@ -133,28 +127,18 @@ int drivePID() {
       }
     }
 
-
     // spin the motors
     leftMotorA.spin(forward, slew + turnSlew, voltageUnits::volt);
     leftMotorB.spin(forward, slew + turnSlew, voltageUnits::volt);
     rightMotorA.spin(forward, ((slew - turnSlew)/100) * 96, voltageUnits::volt);
     rightMotorB.spin(forward, ((slew - turnSlew)/100) * 96, voltageUnits::volt);
 
-
     // set errors
     prevError = error;
     turnPrevError = turnError;
 
-    // test turning logic
-    std::cout << turnSlew << std::endl;
-    std::cout << desiredTurnValue << std::endl;
-    std::cout << turnMotorPower << std::endl;
-    std::cout << slewTurnPercent << std::endl;
-
     // sleep
     vex::task::sleep(20);
   }
-
-
   return 0;
 }
