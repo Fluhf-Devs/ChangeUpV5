@@ -56,3 +56,5 @@ void whenControllerButtonDownPressed();
 void whenControllerButtonLeftPressed();
 extern bool intercept;
 void whenController2ButtonBPressed();
+void setPID(bool isTurning, double val1, double val2);
+void setPID(bool isTurning, double val1);

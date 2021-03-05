@@ -2,7 +2,7 @@
 /*                                                                            */
 /*    Module:       skillsAuto2.cpp                                           */
 /*    Author:       Liam Teale                                                */
-/*    Created:      Feb 24 2021                                                */
+/*    Created:      Feb 24 2021                                               */
 /*    Description:  V5 ChangeUp Robot                                         */
 /*                                                                            */
 /*----------------------------------------------------------------------------*/
@@ -29,8 +29,6 @@ to turn 360 degrees, each wheel has to go forward 42.411500823462 inches
 3738.46153 motor ticks / 360 degrees
 
 10.3846153611 motor ticks / degree */
-
-
 
 void skillsAdvancedAuto() {
   // set custom timer to 60
