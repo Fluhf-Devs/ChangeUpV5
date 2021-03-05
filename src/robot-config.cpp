@@ -31,6 +31,11 @@ bool RemoteControlCodeEnabled = true;
 // define variables used for controlling motors based on controller inputs
 bool DrivetrainLNeedsToBeStopped_Controller1 = true;
 bool DrivetrainRNeedsToBeStopped_Controller1 = true;
+// motion acceleration
+bool accelerate = true;
+double percentage = 0.0;
+double rightFinal = 0.0;
+double leftFinal = 0.0;
 
 // define a task that will handle monitoring inputs from Controller1
 int rc_auto_loop_function_Controller1() {
@@ -70,15 +75,30 @@ int rc_auto_loop_function_Controller1() {
         // reset the toggle so that the deadband code knows to stop the right motor next time the input is in the deadband range
         DrivetrainRNeedsToBeStopped_Controller1 = true;
       }
-      
+
+      if(DrivetrainRNeedsToBeStopped_Controller1 || DrivetrainLNeedsToBeStopped_Controller1) {
+        accelerate = true;
+      } else if (DrivetrainRNeedsToBeStopped_Controller1 == false || DrivetrainLNeedsToBeStopped_Controller1 == false) {
+        accelerate = false;
+        percentage = 0;
+      }
+
+      if (accelerate) {
+          rightFinal = (drivetrainRightSideSpeed / 100) * percentage;
+          leftFinal = (drivetrainLeftSideSpeed / 100) * percentage;
+          if(percentage < 100) {
+             percentage += 10;
+          }
+      }
+
       // only tell the left drive motor to spin if the values are not in the deadband range
       if (DrivetrainLNeedsToBeStopped_Controller1) {
-        LeftDriveSmart.setVelocity(drivetrainLeftSideSpeed, percent);
+        LeftDriveSmart.setVelocity(leftFinal, percent);
         LeftDriveSmart.spin(forward);
       }
       // only tell the right drive motor to spin if the values are not in the deadband range
       if (DrivetrainRNeedsToBeStopped_Controller1) {
-        RightDriveSmart.setVelocity(drivetrainRightSideSpeed, percent);
+        RightDriveSmart.setVelocity(rightFinal, percent);
         RightDriveSmart.spin(forward);
       }
     }
