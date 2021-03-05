@@ -10,8 +10,6 @@
 #include "vex.h"
 #include "functions.h"
 
-bool firstTime = true;
-
 // shakes the controller
 void controllerShake() {
   Controller1.rumble("---");
@@ -30,9 +28,6 @@ int controllerScreen() {
     Controller2.Screen.print(customTimer);
     Controller2.Screen.print(Drivetrain.efficiency());
     Controller2.Screen.newLine();
-
-    // make it say that its not the first time
-    firstTime = false;
   }
   vex::this_thread::sleep_for(1000);
   return 0;
