@@ -80,7 +80,7 @@ int rc_auto_loop_function_Controller1() {
         accelerate = true;
       } else if (DrivetrainRNeedsToBeStopped_Controller1 == false || DrivetrainLNeedsToBeStopped_Controller1 == false) {
         accelerate = false;
-        percentage = 0;
+        percentage = 10;
       }
 
       if (accelerate) {
@@ -89,6 +89,10 @@ int rc_auto_loop_function_Controller1() {
           if(percentage < 100) {
              percentage += 10;
           }
+      }  else {
+        rightFinal = drivetrainRightSideSpeed;
+        leftFinal = drivetrainLeftSideSpeed;
+        percentage = 10;
       }
 
       // only tell the left drive motor to spin if the values are not in the deadband range
