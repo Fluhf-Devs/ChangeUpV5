@@ -15,30 +15,20 @@
 track width = 13.5 inches
 wheelbase = 9 inches
 
-
 circumference of track width = 42.411500823462 inches
 
-
-
-lateral movement
+lateral movement:
 900 motor ticks = 1 revolution
 1 revolution = 10.2101761242 inches
 1 motor tick = 0.01134464013 inches
 
-
-turning movement
-
+turning movement:
 to turn 360 degrees, each wheel has to go forward 42.411500823462 inches
-
 42.411500823462 
-
 
 3738.46153 motor ticks / 360 degrees
 
-10.3846153611 motor ticks / degree
-
-
-*/
+10.3846153611 motor ticks / degree */
 
 
 
@@ -49,7 +39,6 @@ void skillsAdvancedAuto() {
   //vex::thread releaseAHood = thread(releaseHood);
   // activate PID and slew
   vex::task driveTrainPID(drivePID);
-
 
   // autonomous
   leftArmMotor.setVelocity(200, rpm);

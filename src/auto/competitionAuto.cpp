@@ -93,8 +93,6 @@ void competitionMainAuto() {
     leftUpwards.stop();
     rightUpwards.stop();
 
-
-
 ////////////////////////////////////////////////////////////////////////
 // DO NOT USE 3 GOALS IT DOES NOT WORK WITH CURRENT ROBOT
 ///////////////////////////////////////////////////////////////////////
@@ -197,14 +195,9 @@ void competitionMainAuto() {
     rightUpwards.spin(reverse, 600, rpm);
     leftUpwards.spin(reverse, 600, rpm);
 
-
-
 ////////////////////////////////////////////////////////////////////////////////
 // Special auto for partnership with 1011S
 ///////////////////////////////////////////////////////////////////////////////
-
-
-
 
   }else if (goals == 1011) {
     Drivetrain.driveFor(forward, 10, inches);
@@ -229,9 +222,6 @@ void competitionMainAuto() {
     rightArmMotor.stop();
     leftArmMotor.stop();
     Drivetrain.setDriveVelocity(50, percent);
-
-
-
 
     Drivetrain.driveFor(reverse, 18, inches);
     if (LimitSwitchIntake.pressing()) {
@@ -258,14 +248,5 @@ void competitionMainAuto() {
     wait(150, msec);
     leftUpwards.stop();
     rightUpwards.stop();
-
-
-
-
-
-
-
-
-
   }
 }

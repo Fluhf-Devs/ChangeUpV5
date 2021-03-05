@@ -53,15 +53,12 @@ double slewTurnPercent = 0.0;
 
 int drivePID() {
   while(enableDrivePID) {
-
     if(resetDriveSensors) {
       resetDriveSensors = false;
-
       leftMotorA.setPosition(0, degrees);
       leftMotorB.setPosition(0, degrees);
       rightMotorA.setPosition(0, degrees);
       rightMotorB.setPosition(0, degrees);
-
     }
 
     // get the position of the motors

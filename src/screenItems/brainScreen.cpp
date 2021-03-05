@@ -26,12 +26,10 @@ int brainScreen() {
   Brain.Screen.print("10012W");
   Brain.Screen.setPenColor(white);
 
-  
   for(;;) {
     Brain.Screen.setFont(monoL);
     
     // display text in the boxes
-    
     Brain.Screen.printAt(20, 200, "%d percent", Brain.Battery.capacity());
     Brain.Screen.printAt(250, 175, "Time: %d ", customTimer);
     // sleep 1000 msecs

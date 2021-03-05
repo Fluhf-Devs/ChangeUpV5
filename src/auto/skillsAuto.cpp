@@ -17,10 +17,6 @@ void skillsMainAuto() {
   Drivetrain.turnFor(360, degrees);
   wait(100, sec);
 
-
-
-
-
   // activate PID
   vex::task drivetrainPID(drivePID);
   // set timer for brain screen
@@ -73,8 +69,4 @@ void skillsMainAuto() {
   Drivetrain.drive(forward, 600, rpm);
   wait(900, msec);
   Drivetrain.stop();
-}
-
-void preAuton() {
-  
 }
