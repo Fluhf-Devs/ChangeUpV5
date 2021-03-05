@@ -43,22 +43,13 @@ void skillsAdvancedAuto() {
   rightArmMotor.setVelocity(200, rpm);
   leftArmMotor.spin(forward);
   rightArmMotor.spin(forward);
-  startSlew = true;
-  resetDriveSensors = true;
-  turning = false;
-  desiredValue = 800;
+  setPID(false, 800);
 
   vex::task::sleep(1000);
 
   leftArmMotor.stop();
   rightArmMotor.stop();
-  resetDriveSensors = true;
-  startSlew = true;
-  turning = true;
-  slewTurnPercent = 0.0;
-  slewPercent = 0.0;
-  desiredValue = 0;
-  desiredTurnValue = -250;
+  setPID(true, -250);
 
   vex::task::sleep(500);
 
@@ -67,45 +58,19 @@ void skillsAdvancedAuto() {
   wait(200, msec);
   leftUpwards.stop();
   rightUpwards.stop();
-  resetDriveSensors = true;
-  startSlew = true;
-  turning = false;
-  slewTurnPercent = 0.0;
-  slewPercent = 0.0;
-  desiredValue = 1300;
-  desiredTurnValue = 0;
+  setPID(false, 1300);
 
   vex::task::sleep(1500);
   
-  resetDriveSensors = true;
-  startSlew = true;
-  turning = true;
-  slewTurnPercent = 0.0;
-  slewPercent = 0.0;
-  desiredValue = 0;
-  desiredTurnValue = -800;
+  setPID(true, -800);
 
   vex::task::sleep(750);
 
-  resetDriveSensors = true;
-  startSlew = true;
-  turning = false;
-  slewTurnPercent = 0;
-  slewPercent = 0;
-  kP = 0.02;
-  desiredValue = 500;
-  desiredTurnValue = 0;
+  setPID(false, 0.02, 500);
 
   vex::task::sleep(500);
 
-  kP = 0.09;
-  resetDriveSensors = true;
-  startSlew = true;
-  turning = false;
-  slewTurnPercent = 0;
-  slewPercent = 0;
-  desiredValue = 0;
-  desiredTurnValue = 0;
+  setPID(false, 0.09, 0);
   leftUpwards.spin(reverse, 600, rpm);
   rightUpwards.spin(reverse, 600, rpm);
   wait(500, msec);
@@ -114,57 +79,27 @@ void skillsAdvancedAuto() {
 
   vex::task::sleep(100);
 
-  resetDriveSensors = true;
-  startSlew = true;
-  turning = false;
-  slewTurnPercent = 0;
-  slewPercent = 0;
-  desiredValue = -300;
-  desiredTurnValue = 0;
+  setPID(false, -300);
 
   vex::task::sleep(500);
 
-  resetDriveSensors = true;
-  startSlew = true;
-  turning = true;
-  slewTurnPercent = 0;
-  slewPercent = 0;
-  desiredValue = 0;
-  desiredTurnValue = 700;
+  setPID(true, 700);
+
   vex::task::sleep(500);
 
   leftArmMotor.spin(forward, 200, rpm);
   rightArmMotor.spin(forward, 200, rpm);
-  resetDriveSensors = true;
-  startSlew = true;
-  turning = false;
-  slewTurnPercent = 0;
-  slewPercent = 0;
-  desiredTurnValue = 0;
-  desiredValue = 1900;
+  setPID(false, 1900);
 
   vex::task::sleep(1500);
 
   leftArmMotor.stop();
   rightArmMotor.stop();
-  resetDriveSensors = true;
-  startSlew = true;
-  turning = true;
-  slewTurnPercent = 0;
-  slewPercent = 0;
-  desiredTurnValue = -600;
-  desiredValue = 0;
+  setPID(true, -600);
 
   vex::task::sleep(500);
 
-  resetDriveSensors = true;
-  startSlew = true;
-  turning = false;
-  slewTurnPercent = 0;
-  slewPercent = 0;
-  kP = 0.02;
-  desiredValue = 600;
-  desiredTurnValue = 0;
+  setPID(false, 0.02, 600);
   wait(400, msec);
   leftUpwards.spin(reverse, 600, rpm);
   rightUpwards.spin(reverse, 600, rpm);
@@ -174,50 +109,11 @@ void skillsAdvancedAuto() {
 
   vex::task::sleep (900);
 
-  resetDriveSensors = true;
-  startSlew = true;
-  turning = false;
-  slewTurnPercent = 0;
-  slewPercent = 0;
-  kP = 0.09;
-  desiredTurnValue = 0;
-  desiredValue = -400;
+  setPID(false, 0.09, -400);
 
   vex::task::sleep(500);
 
-  resetDriveSensors = true;
-  startSlew = true;
-  turning = true;
-  slewTurnPercent = 0;
-  slewPercent = 0;
-  desiredValue = 0;
-  desiredTurnValue = 1400;
-
-
-
-
-
-
-
-
-
-
-  
-  
-
-
-
-  
-  
-
-
-
-
-
-
-
-
-
+  setPID(true, 1400);
 
 
 }
