@@ -18,14 +18,14 @@ void setPID(bool isTurning, double val1, double val2) {
 
   if (isTurning) {
     turning = true;
-    turnKP = val1;
+    turnKP = val2;
     desiredValue = 0;
-    desiredTurnValue = val2;
+    desiredTurnValue = val1;
   } else if (isTurning == false) {
       turning = false;
-      kP = val1;
+      kP = val2;
       desiredTurnValue = 0;
-      desiredValue = val2;
+      desiredValue = val1;
     }
 }
 

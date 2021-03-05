@@ -66,11 +66,11 @@ void skillsAdvancedAuto() {
 
   vex::task::sleep(750);
 
-  setPID(false, 0.02, 500);
+  setPID(false, 500, 0.02);
 
   vex::task::sleep(500);
 
-  setPID(false, 0.09, 0);
+  setPID(false, 0, 0.09);
   leftUpwards.spin(reverse, 600, rpm);
   rightUpwards.spin(reverse, 600, rpm);
   wait(500, msec);
@@ -99,7 +99,7 @@ void skillsAdvancedAuto() {
 
   vex::task::sleep(500);
 
-  setPID(false, 0.02, 600);
+  setPID(false, 600, 0.02);
   wait(400, msec);
   leftUpwards.spin(reverse, 600, rpm);
   rightUpwards.spin(reverse, 600, rpm);
@@ -109,7 +109,7 @@ void skillsAdvancedAuto() {
 
   vex::task::sleep (900);
 
-  setPID(false, 0.09, -400);
+  setPID(false, -400, 0.09);
 
   vex::task::sleep(500);
 
