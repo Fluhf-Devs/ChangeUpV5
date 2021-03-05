@@ -43,3 +43,6 @@ extern double turnSlew;
 extern double slewTurnPercent;
 extern double turnMotorPower;
 extern double slewPercent;
+extern double turnKP;
+extern double kP;
+extern double kD;

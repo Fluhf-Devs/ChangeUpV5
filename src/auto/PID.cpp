@@ -128,7 +128,7 @@ int drivePID() {
       } else if (turning) {
           turnSlew = (turnMotorPower / 100) * slewTurnPercent;
           if(slewTurnPercent < 100) {
-              slewTurnPercent += 1;
+              slewTurnPercent += 10;
           }
       }
     }
