@@ -83,7 +83,7 @@ void skillsAdvancedAuto() {
 
   vex::task::sleep(500);
 
-  setPID(true, 700);
+  setPID(true, 750);
 
   vex::task::sleep(500);
 
@@ -113,7 +113,7 @@ void skillsAdvancedAuto() {
 
   vex::task::sleep(1000);
 
-  setPID(true, 1250);
+  setPID(true, 1300);
 
   vex::task::sleep(750);
 
@@ -125,7 +125,7 @@ void skillsAdvancedAuto() {
 
   leftArmMotor.stop();
   rightArmMotor.stop();
-  setPID(true, -850);
+  setPID(true, -950);
 
   vex::task::sleep(750);
 
@@ -142,7 +142,7 @@ void skillsAdvancedAuto() {
 
   vex::task::sleep(1000);
 
-  setPID(false, -600);
+  setPID(false, -800);
 
   vex::task::sleep(750);
 
