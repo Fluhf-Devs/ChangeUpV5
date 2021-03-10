@@ -133,7 +133,7 @@ void skillsAdvancedAuto() {
 
   vex::task::sleep(750);
 
-  setPID(0, 0, 0.09);
+  setPID(false, 0, 0.09);
   leftUpwards.spin(reverse, 600, rpm);
   rightUpwards.spin(reverse, 600, rpm);
   wait(600, msec);;
