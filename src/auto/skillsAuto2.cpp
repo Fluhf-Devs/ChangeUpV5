@@ -39,6 +39,12 @@ void skillsAdvancedAuto() {
   vex::task driveTrainPID(drivePID);
 
   // autonomous
+  leftArmMotor.spin(reverse, 200, rpm);
+  rightArmMotor.spin(reverse, 200, rpm);
+  wait(500, msec);
+  leftArmMotor.stop();
+  rightArmMotor.stop();
+
   leftArmMotor.setVelocity(200, rpm);
   rightArmMotor.setVelocity(200, rpm);
   leftArmMotor.spin(forward);
@@ -109,17 +115,17 @@ void skillsAdvancedAuto() {
 
   vex::task::sleep (900);
 
-  setPID(false, -600, 0.09);
+  setPID(false, -700, 0.09);
 
   vex::task::sleep(1000);
 
-  setPID(true, 1300);
+  setPID(true, 1400);
 
   vex::task::sleep(750);
 
   leftArmMotor.spin(forward, 200, rpm);
   rightArmMotor.spin(forward, 200, rpm);
-  setPID(false, 1750);
+  setPID(false, 1700);
 
   vex::task::sleep(2000);
 
